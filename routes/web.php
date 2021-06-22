@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class,'index'])->name('home');
+
+//nuevo anuncio
+Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
+Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
