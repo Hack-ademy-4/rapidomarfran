@@ -35,11 +35,14 @@ public function createAnnouncement(AnnouncementRequest $request)
     $a = new Announcement();
     $a->title = $request->input('title');
     $a->body = $request->input('body');
-    $a->body = $request->input('category');
+    $a->category_id = $request->input('category');
+    $a->price = $request->input('price');
     $a->save();
     return redirect('/')->with('announcement.create.success','Anuncio creado con exito');
     
 }
+
+
 
 
 
