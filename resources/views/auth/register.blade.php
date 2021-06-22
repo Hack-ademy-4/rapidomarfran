@@ -58,11 +58,11 @@
           <div class="validate"></div>
         </div> --}}
         <div class="mb-3">
-          <div class="loading">Loading</div>
+          <div class="loading text-center">Loading</div>
           <div class="error-message"></div>
-          <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+          <div class="sent-message text-center">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
         </div>
-        <div class="text-center"><button type="submit">Registrar</button></div>
+        <div class="text-center"><button class="boton" type="submit">Registrar</button></div>
       </form>
     </div>
   </section><!-- End Book A Table Section -->
