@@ -30,11 +30,14 @@
                         <div class="form-group">
                             <label for="categories">Categorias</label>
                             <select class="form-control" id="categories" name="category">
-                                @foreach ($categories as $category)
+                                @foreach($categories as $category)
                                 <option value="{{$category->id}}"
                                     {{old('category') == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
                                 @endforeach
                             </select>
+                            @error('category')
+                            <span class= "invalid-feedback" role="alert"><strong>{{message}}</strong></span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="announcementeName">Titulo</label>

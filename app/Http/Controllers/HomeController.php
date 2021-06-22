@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Category;
+
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use App\Http\Controllers\HomeController;
+use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
-{
+{   
 
     public function __construct()
     {
         $this->middleware('auth');
+        $categories = Category::all();
+        View::share('categories',$categories);
     }
 
     public function index()
@@ -28,8 +35,9 @@ public function createAnnouncement(AnnouncementRequest $request)
     $a = new Announcement();
     $a->title = $request->input('title');
     $a->body = $request->input('body');
+    $a->body = $request->input('category');
     $a->save();
-    return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
+    return redirect('/')->with('announcement.create.success','Anuncio creado con exito');
     
 }
 
