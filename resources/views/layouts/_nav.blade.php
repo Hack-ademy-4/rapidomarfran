@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand nav-b"  href="{{ route('home') }}">Rapido.es</a>
+        <a class="navbar-brand nav-b" href="{{ route('home') }}">Rapido.es</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,29 +19,25 @@
                         Categorias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach($categories as $category)
 
-                       <!--  <li class="nav-item py-2">
-                            <a class="nav-link text-lowercase text-decoration-none text-reset"
-                                href="{{ route('announcement.new') }}">
-                                Nuevo Anuncio
-                            </a>
-                        </li> -->
-                        <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item"
+                                href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
+                                {{$category->name}}</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                        <!--  <li class="dropdown-item mb-3">
+                            <a href="">{{$category->name}}</a>
+                        </li> -->
+                        @endforeach
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
             @guest
             @if (Route::has('login'))
             <div class="mx-3">
-                <a href="{{route('login')}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000"
+                <a href="{{route('login')}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff"
                         class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                         <path fill-rule="evenodd"
@@ -53,15 +49,11 @@
                     </span>
                 </div>
             </div>
-            <!-- <li class="nav-item mx-0 mx-lg-1 ">
-                <a class="borderMarcador nav-link text-lowercase py-3 px-0 px-lg-3 rounded js-scroll-trigger text-decoration-none text-reset"
-                    href="{{route('login')}}"><span>Login</span></a>
-            </li> -->
             @endif
             @if (Route::has('register'))
             <div class="mx-3">
                 <a href="{{route('register')}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        fill="#000" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                        fill="#fff" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                         <path fill-rule="evenodd"
                             d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
@@ -72,10 +64,6 @@
                     </span>
                 </div>
             </div>
-            <!-- <li class="nav-item mx-0 mx-lg-1">
-                <a class="borderMarcador nav-link text-lowercase py-3 px-0 px-lg-3 rounded js-scroll-trigger text-decoration-none text-reset"
-                    href="{{route('register')}}"><span>Register</span></a>
-            </li> -->
             @endif
             @else
             <div>
