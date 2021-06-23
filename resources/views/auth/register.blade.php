@@ -6,7 +6,7 @@
     <div class="container">
       <div class="section-title">
         <h2>Registrate a<span> Rapido.es</span></h2>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <p class="text-center">Rellena los todos los campos.</p>
       </div>
       @if ($errors->any())
       <div class="alert alert-danger">
