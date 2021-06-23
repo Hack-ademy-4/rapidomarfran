@@ -2,19 +2,6 @@
 @section('content')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -29,7 +16,15 @@
                         @csrf
                         <div class="form-group">
                             <label for="categories">Categorias</label>
-                           
+                            <select class="form-control" id="categories" name="category">
+                                @foreach($categories as $category)
+                                <option value="{{$category->id}}"
+                                    {{old('category') == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                            @error('category')
+                            <span class="invalid-feedback" role="alert"><strong>{{message}}</strong></span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="announcementeName">Titulo</label>
@@ -49,6 +44,15 @@
                             <small id="emailHelp" class="form-text" style="color:red;">
                                 {{ $message }}
                             </small>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="announcementPrice">Precio</label>
+                            <input type="number" step="0.01" class="form-control" id="announcementPrice"
+                                aria-describedby="priceHelp" name="price" value="{{old("price")}}">
+                            @error('price')
+                            <small id="priceHelp" class="form-text" style="color:red;">{{ $message }}</small>
                             @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

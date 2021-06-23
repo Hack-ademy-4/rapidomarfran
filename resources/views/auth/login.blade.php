@@ -5,8 +5,8 @@
 <section id="book-a-table" class="book-a-table">
     <div class="container">
       <div class="section-title">
-        <h2>Haz Login a<span> Rapido.es</span></h2>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <h2>Login en <span> Rapido.es</span></h2>
+        <p class=" text-center subtitulo"=>Rellena los campos con tun datos.</p>
       </div>
       @if ($errors->any())
       <div class="alert alert-danger">
@@ -54,11 +54,11 @@
           <div class="validate"></div>
         </div> --}}
         <div class="mb-3">
-          <div class="loading">Loading</div>
+          <div class="loading text-center">Loading</div>
           <div class="error-message"></div>
-          <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+          <div class="sent-message text-center">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
         </div>
-        <div class="text-center"><button type="submit">Entrar</button></div>
+        <div class="text-center"><button class="boton" type="submit">Entrar</button></div>
       </form>
     </div>
   </section><!-- End Book A Table Section -->
