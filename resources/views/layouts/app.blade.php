@@ -23,14 +23,5 @@
         <!-- Scripts -->
 <script src="{{mix('js/app.js')}}"></script>
 
-<script>
-        const logout = document.getElementById('logoutBtn');
-        if (logout) {
-            logout.addEventListener('click', (e) => {
-                e.preventDefault();
-                const form = document.getElementById('logoutForm').submit();
-            });
-        }
-</script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 @foreach($announcements as $announcement)
 <div class="row my-3">
     <div class="col-12 col-md-8 offset-md-2">
-        <div class="card">
+        <div class="card card border-0 shadow" style="width: 30rem;">
             <div class="card-header">
                 {{$announcement->title}}
             </div>
@@ -29,9 +29,6 @@
                 <strong>Categoria: <a href="#">{{$announcement->category->name}}</a></strong>
                 <i>{{$announcement->created_at->format('d/m/Y')}}-{{$announcement->user->name}}</i>
             </div>
-           <!--  <div class="mb-5">
-                <a href="{{route("announcement.details", ['id'=>$announcement->id])}}">Leer más</a>
-            </div> -->
         </div>
     </div>
 </div>

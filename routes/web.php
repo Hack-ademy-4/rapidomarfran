@@ -24,7 +24,9 @@ Route::post('/announcement/create', [HomeController::class,'createAnnouncement']
 
 // visualizacion anuncio de ususario no registrado
 Route::get('/', [PublicController::class,'index'])->name('home');
+
 //anuncio relacionado con categoria
 Route::get('/category/{name}/{id}/announcements', [PublicController::class,'announcementsByCategory'])->name('category.announcements');
+
 // web detalle
 Route::get('/announcement/{id}', [HomeController::class,'details'])->name('announcement.details');

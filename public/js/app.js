@@ -4946,6 +4946,8 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./myjs */ "./resources/js/myjs.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -4983,6 +4985,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/myjs.js":
+/*!******************************!*\
+  !*** ./resources/js/myjs.js ***!
+  \******************************/
+/***/ (() => {
+
+var logout = document.getElementById('logoutBtn');
+
+if (logout) {
+  logout.addEventListener('click', function (e) {
+    e.preventDefault();
+    var form = document.getElementById('logoutForm').submit();
+  });
+}
 
 /***/ }),
 

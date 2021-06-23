@@ -22,16 +22,17 @@ class HomeController extends Controller
     }
 
     public function index()
-{
+    {
     return view('home');
-}
+    }
 
-public function newAnnouncement() 
-{
+    public function newAnnouncement() 
+    {
     return view('announcement.new'); 
-}
-public function createAnnouncement(AnnouncementRequest $request)
-{
+    }
+    public function createAnnouncement(AnnouncementRequest $request)
+    
+    {
     $a = new Announcement();
     $a->title = $request->input('title');
     $a->body = $request->input('body');
@@ -41,8 +42,9 @@ public function createAnnouncement(AnnouncementRequest $request)
     $a->save();
     return redirect('/')->with('announcement.create.success','Anuncio creado con exito');
     
-}
-public function details($id) 
+    }
+    public function details($id) 
+
     {
         $announcement = Announcement::findOrFail($id);
         return view("announcement.details",["announcement"=>$announcement]);

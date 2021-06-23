@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('announcement.new') }}">Nuevo anuncio</a>
@@ -27,9 +27,6 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <!--  <li class="dropdown-item mb-3">
-                            <a href="">{{$category->name}}</a>
-                        </li> -->
                         @endforeach
                     </ul>
                 </li>

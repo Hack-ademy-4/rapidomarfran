@@ -32,7 +32,7 @@ h1,h2{
 }
 
 /* botones*/
-.boton{
+.button-card{
 
     width:150px;
     height:42px;
@@ -53,8 +53,10 @@ h1,h2{
     padding: 2px 6px;
     border-width: 2px;
     border-style: outset;
+    text-decoration:none;
    
     
 }
+
 
 
