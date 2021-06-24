@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap);
+<<<<<<< HEAD
 *{
     font-family: 'PT Sans', sans-serif;
 }
@@ -59,6 +60,8 @@ h1,h2{
     
 }
 
+=======
+>>>>>>> 7ee2fccc459bdd95f9e53d2ede2882fb26ebf9a4
 @charset "UTF-8";
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
@@ -10888,6 +10891,61 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+* {
+  font-family: "KoHo", sans-serif;
+}
+
+:root {
+  --main-color: #5d0079;
+  --sec-color: #65466f;
+  --accent-color: rgb(193, 170, 0);
+}
+
+.tx-main {
+  color: var(--main-color) !important;
+}
+
+.tx-sec {
+  color: var(--sec-color) !important;
+}
+
+.tx-accent {
+  color: var(--accent-color) !important;
+}
+
+.tx-w {
+  color: white !important;
+}
+
+.b-nav {
+  border: 2px solid var(--sec-color);
+}
+
+.banderas {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 8px var(--sec-color);
+  border-radius: 50%;
+}
+
+.head {
+  height: 100vh;
+  min-height: 500px;
+  background: url("/images/Group 3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  background: linear-gradient(to right, var(--main-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;
