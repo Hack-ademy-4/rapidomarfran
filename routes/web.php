@@ -38,3 +38,6 @@ Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home')
 //revisor acepta-rechaza
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.announcement.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.announcement.reject');
+
+//banderas
+Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('locale');

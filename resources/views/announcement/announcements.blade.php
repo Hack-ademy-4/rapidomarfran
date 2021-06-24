@@ -16,9 +16,7 @@
             <p>
                 {{$announcement->price}}
             </p>
-            <!-- <div class="mb-5">
-                <a href="{{route('announcement.details', ['id'=>$announcement->id])}}">Leer más</a>
-            </div> -->
+            
             <div class="car-body d-flex">
                 <img src="https://picsum.photos/200/300" alt="">
                 <p>
@@ -34,10 +32,5 @@
 </div>
 @endforeach
 
-<!-- <div class="row my-3">
-    <div class="col-12 col-md-8 offset-md-2">
-        {{ $announcements->links() }}
-    </div>
-</div>
- -->
+
 @endsection

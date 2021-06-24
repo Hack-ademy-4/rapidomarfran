@@ -4,7 +4,7 @@
 @if(session('announcement.create.success'))
 <div class="alert alert-success">{{session('announcement.create.success')}}</div>
 @endif
-<h1>Bienvenidos en Rapido.es</h1>
+<h1>{{__('ui.welcome')}}</h1>
 
 @foreach($announcements as $announcement)
 <div class="row my-3">

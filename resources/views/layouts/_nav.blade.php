@@ -27,11 +27,38 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
+
                         @endforeach
-                        
+
                     </ul>
                 </li>
             </ul>
+            <!-- bandera -->
+
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="">
+                    <span class="flag-icon flag-icon-es"></span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <span class="flag-icon flag-icon-gb"></span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <span class="flag-icon flag-icon-it"></span>
+                </a>
+            </li> -->
+
+            @include('layouts._locale',["lang"=>'es','nation'=>'es'])
+            @include('layouts._locale',["lang"=>'en','nation'=>'gb'])
+            @include('layouts._locale',["lang"=>'it','nation'=>'it'])
+
+            <!-- acaba bandera -->
+
             @guest
             @if (Route::has('login'))
             <div class="mx-3">
@@ -83,16 +110,16 @@
             </div>
             <!-- revisor -->
             @if (Auth::user()->is_revisor)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('revisor.home') }}">
-                                Revisor Casa
-                                <span class="badge rounded-pill bg-danger">
-                                    {{\App\Models\Announcement::ToBeRevisionedCount() }}
-                                </span>
-                            </a>
-                        </li>
-                        @endif
-                        <!-- acaba revisor -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('revisor.home') }}">
+                    Revisor Casa
+                    <span class="badge rounded-pill bg-danger">
+                        {{\App\Models\Announcement::ToBeRevisionedCount() }}
+                    </span>
+                </a>
+            </li>
+            @endif
+            <!-- acaba revisor -->
             @endguest
 
         </div>
