@@ -28,6 +28,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         @endforeach
+                        
                     </ul>
                 </li>
             </ul>
@@ -80,6 +81,18 @@
                     </span>
                 </div>
             </div>
+            <!-- revisor -->
+            @if (Auth::user()->is_revisor)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('revisor.home') }}">
+                                Revisor Casa
+                                <span class="badge rounded-pill bg-danger">
+                                    {{\App\Models\Announcement::ToBeRevisionedCount() }}
+                                </span>
+                            </a>
+                        </li>
+                        @endif
+                        <!-- acaba revisor -->
             @endguest
 
         </div>
