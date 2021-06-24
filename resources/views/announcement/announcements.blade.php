@@ -4,6 +4,7 @@
 @if(session('announcement.create.success'))
 <div class="alert alert-success">{{session('announcement.create.success')}}</div>
 @endif
+ <!-- anuncio por categoria -->
 <h1>Anuncios por categoria: {{$category->name}}</h1>
 
 @foreach($announcements as $announcement)
@@ -24,6 +25,7 @@
                 </p>
             </div>
             <div class="card-footer d-flex justify-content-between">
+                <!-- categoria -->
                 <strong>Categoria: <a href="#">{{$announcement->category->name}}</a></strong>
                 <i>{{$announcement->created_at->format('d/m/Y')}}-{{$announcement->user->name}}</i>
             </div>

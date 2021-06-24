@@ -4,12 +4,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- nuevo anuncio -->
                 <div class="card-header">
                     Nuevo Anuncio
                 </div>
                 <div class="card-body">
                     <form method="POST" action='{{route("announcement.create")}}'>
                         @csrf
+                        <!-- categorias -->
                         <div class="form-group">
                             <label for="categories">Categorias</label>
                             <select class="form-control" id="categories" name="category">
@@ -23,6 +25,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <!-- titulo -->
                             <label for="announcementeName">Titulo</label>
                             <input type="text" class="form-control" id="announcementeName" aria-describedby="emailHelp"
                                 name="title" value="{{old("title")}}">
@@ -33,6 +36,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <!-- anuncio -->
                             <label for="announcementeBody">Anuncio</label>
                             <textarea class="form-control" name="body" id="announcementeBody" cols="30"
                                 rows="10">{{old("body")}}</textarea>
@@ -43,6 +47,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <!-- precio -->
                             <label for="announcementPrice">Precio</label>
                             <input type="number" step="0.01" class="form-control" id="announcementPrice"
                                 aria-describedby="priceHelp" name="price" value="{{old("price")}}">
@@ -50,6 +55,7 @@
                             <small id="priceHelp" class="form-text" style="color:red;">{{ $message }}</small>
                             @enderror
                         </div>
+                        <!--  enviar   -->
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

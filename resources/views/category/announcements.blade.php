@@ -4,6 +4,7 @@
 <div class='container'>
     <div class='row'>
         <div class='col-12 text-center'>
+            <!-- anuncios por categoria -->
         <h1>Anuncios por categoria: {{$category->name}}</h1>
         </div>
     </div>
@@ -21,6 +22,7 @@
                     </p>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
+                    <!-- categoria -->
                 <strong>Categoria: <a href="#">{{$announcement->category->name}}</a></strong>
                 <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement->user->name}}</i>
                 </div>

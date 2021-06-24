@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<!-- detalle del anuncio -->
 <h1>Detalle del anuncio: {{$announcement->name}}</h1>
 <div class="row my-3">
     <div class="col-12 col-md-8 offset-md-2">
@@ -17,6 +18,7 @@
                 </p>
             </div>
             <div class="card-footer d-flex justify-content-between">
+                <!-- categoria -->
                 <strong>Categoria:{{$announcement->category->name}}</strong>
                 <i class="bi bi-calendar-check px-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">

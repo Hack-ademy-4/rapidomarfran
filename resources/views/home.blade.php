@@ -4,8 +4,8 @@
 @if(session('announcement.create.success'))
 <div class="alert alert-success">{{session('announcement.create.success')}}</div>
 @endif
+<!-- bienvenido -->
 <h1>{{__('ui.welcome')}}</h1>
-
 @foreach($announcements as $announcement)
 <div class="row my-3">
     <div class="col-12 col-md-8 offset-md-2 align-items-center justify-content-around mb-3 ">
@@ -22,8 +22,9 @@
                     {{$announcement->body}}
                 </p>
             </div>
+            <!-- categorias -->
             <div class="card-footer d-flex justify-content-between">
-                <strong>Categoria: <a
+                <strong>{{__('ui.category')}}: <a
                         href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a></strong>
                 <i class="bi bi-calendar-check px-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
@@ -35,11 +36,11 @@
                 <i>{{$announcement->user->name}}</i>
             </div>
             <div class="mb-5">
-                <a class="button-card" href="{{route('announcement.details', ['id'=>$announcement->id])}}">Leer más</a>
+                <!-- leer mas -->
+                <a class="button-card" href="{{route('announcement.details', ['id'=>$announcement->id])}}">{{__('ui.read')}}</a>
             </div>
         </div>
     </div>
 </div>
 @endforeach
-
 @endsection
