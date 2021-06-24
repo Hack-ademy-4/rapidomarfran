@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +23,14 @@ Route::get('/', [App\Http\Controllers\HomeController::class,'index'])->name('hom
 Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
 Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
 
-// visualizacion anuncio de ususario no registrado
+//visualizacion anuncio de ususario no registrado
 Route::get('/', [PublicController::class,'index'])->name('home');
 
 //anuncio relacionado con categoria
 Route::get('/category/{name}/{id}/announcements', [PublicController::class,'announcementsByCategory'])->name('category.announcements');
 
-// web detalle
+//web detalle
 Route::get('/announcement/{id}', [HomeController::class,'details'])->name('announcement.details');
+
+//revisor
+Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
