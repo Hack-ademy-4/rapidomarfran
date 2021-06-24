@@ -10829,51 +10829,58 @@ textarea.form-control-lg {
   }
 }
 * {
-  font-family: "PT Sans", sans-serif;
+  font-family: "KoHo", sans-serif;
 }
 
-h1, .h1, h2, .h2 {
-  text-align: center;
-  color: brown;
+:root {
+  --main-color: #5d0079;
+  --sec-color: #65466f;
+  --accent-color: rgb(193, 170, 0);
 }
 
-/* navbar y enlaces */
-.navbar {
-  color: #dfd0d0;
-  background-color: #2d4ea0;
-  background: linear-gradient(#9fc9ea, #2d4ea0, #9fc9ea);
+.tx-main {
+  color: var(--main-color) !important;
 }
 
-.nav-b {
-  color: #08ffe6;
+.tx-sec {
+  color: var(--sec-color) !important;
 }
 
-.nav-link {
-  color: white;
-  font-size: 20px;
+.tx-accent {
+  color: var(--accent-color) !important;
 }
 
-/* botones*/
-.button-card {
-  width: 150px;
-  height: 42px;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-  font-size: 20px !important;
-  padding: 15px 32px;
-  size: 50px;
-  background-color: #2d4ea0;
-  background: linear-gradient(#9fc9ea, #2d4ea0, #9fc9ea);
-  border: 30px;
-  color: white;
-  border: 2px solid #2d4ea0;
-  border-radius: 70px;
-  text-align: center;
+.tx-w {
+  color: white !important;
+}
+
+.b-nav {
+  border: 2px solid var(--sec-color);
+}
+
+.banderas {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 2px 6px;
-  border-width: 2px;
-  border-style: outset;
-  text-decoration: none;
+  box-shadow: 3px 3px 8px var(--sec-color);
+  border-radius: 50%;
+}
+
+.head {
+  height: 100vh;
+  min-height: 500px;
+  background: url("/images/Group 3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title {
+  background: linear-gradient(to right, var(--main-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .flag-icon-background, .flag-icon {

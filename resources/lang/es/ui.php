@@ -1,5 +1,5 @@
 
 <?php
 return [
-    'welcome'=>'Bienvenidos a rapido.es',
+    'welcome'=>'Bienvenidos a Rapido',
 ];

@@ -1,122 +1,100 @@
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand nav-b" href="{{ route('home') }}">Rapido.es</a>
+<nav class="navbar navbar-expand-lg p-4 shadow-sm fixed-top bg-light">
+
+    <div class="container-fluid d-flex align-items-center">
+
+        <svg id="logo-15" width="35" height="35" viewBox="0 0 49 48" fill="#5d0079" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M24.5 12.75C24.5 18.9632 19.4632 24 13.25 24H2V12.75C2 6.53679 7.03679 1.5 13.25 1.5C19.4632 1.5 24.5 6.53679 24.5 12.75Z"
+                class="ccustom" fill="#5d0079"></path>
+            <path
+                d="M24.5 35.25C24.5 29.0368 29.5368 24 35.75 24H47V35.25C47 41.4632 41.9632 46.5 35.75 46.5C29.5368 46.5 24.5 41.4632 24.5 35.25Z"
+                class="ccustom" fill="#65466f"></path>
+            <path
+                d="M2 35.25C2 41.4632 7.03679 46.5 13.25 46.5H24.5V35.25C24.5 29.0368 19.4632 24 13.25 24C7.03679 24 2 29.0368 2 35.25Z"
+                class="ccustom" fill="#65466f"></path>
+            <path
+                d="M47 12.75C47 6.53679 41.9632 1.5 35.75 1.5H24.5V12.75C24.5 18.9632 29.5368 24 35.75 24C41.9632 24 47 18.9632 47 12.75Z"
+                class="ccustom" fill="#5d0079"></path>
+        </svg>
+        <a class="navbar-brand nav-b text-decoration-none tx-main mx-2" href="{{ route('home') }}">Rapido</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <!--  home -->
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <!-- nuevo annuncio -->
-                    <a class="nav-link" href="{{ route('announcement.new') }}">{{__('ui.newAdd')}}</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <!-- categorias -->
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.category')}}</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach($categories as $category)
-
-                        <li><a class="dropdown-item"
-                                href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
-                                {{$category->name}}</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        @endforeach
-
-                    </ul>
-                </li>
-            </ul>
-            <!-- bandera -->
-
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="">
-                    <span class="flag-icon flag-icon-es"></span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <span class="flag-icon flag-icon-gb"></span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <span class="flag-icon flag-icon-it"></span>
-                </a>
-            </li> -->
-
+        <div class="d-flex">
             @include('layouts._locale',["lang"=>'es','nation'=>'es'])
             @include('layouts._locale',["lang"=>'en','nation'=>'gb'])
             @include('layouts._locale',["lang"=>'it','nation'=>'it'])
+        </div>
 
+        <div class="collapse navbar-collapse d-none d-md-block" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-3">
+                    <!--  home -->
+                    <a class="nav-link text-decoration-none tx-sec" aria-current="page"
+                        href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <!-- nuevo annuncio -->
+                    <a class="nav-link text-decoration-none tx-sec"
+                        href="{{ route('announcement.new') }}">{{__('ui.newAdd')}}</a>
+                </li>
+                <li class="nav-item mx-3 dropdown">
+                    <!-- categorias -->
+                    <a class="nav-link text-decoration-none tx-sec dropdown-toggle" href="#" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.category')}}</a>
+                    <ul class="dropdown-menu b-nav rounded-0" aria-labelledby="navbarDropdown">
+                        @foreach($categories as $category)
+
+                        <li class="">
+                            <a class="dropdown-item text-center"
+                                href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
+                                {{$category->name}}
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        @endforeach
+                    </ul>
+                    
+            </ul>
+
+
+    
             <!-- acaba bandera -->
 
             @guest
             @if (Route::has('login'))
-            <div class="mx-3">
-                <a href="{{route('login')}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                    </svg></a>
-                <div>
-                    <!-- login -->
-                    <span>Login</span>
-                </div>
+            <div class="mx-3 btn btn-warning">
+                <a class="text-decoration-none tx-w"  href="{{route('login')}}">Login</a>
             </div>
             @endif
             @if (Route::has('register'))
-            <div class="mx-3">
-                <a href="{{route('register')}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        fill="#fff" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                        <path fill-rule="evenodd"
-                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                    </svg></a>
-                <div>
-                    <!-- register -->
-                    <span>Register</span>
-                </div>
+            <div class="mx-3 btn btn-warning">
+                <a class="text-decoration-none tx-w"  href="{{route('register')}}">Register</a>
             </div>
             @endif
             @else
-            <div>
+            <div class="btn  btn-warning">
                 <form id="logoutForm" action="{{route('logout')}}" method="POST">
                     @csrf
                 </form>
-                <a id="logoutBtn"
-                    class=" nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-decoration-none text-reset"
-                    href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000"
-                        class="bi bi-person-x-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 
-                            1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z" />
-                    </svg></a>
-                <div>
-                    <!-- logout -->
-                    <span>Logout</span>
-                </div>
+                <a class="text-decoration-none tx-w"  id="logoutBtn" class="" href="#">logout</a>
             </div>
             <!-- revisor -->
             @if (Auth::user()->is_revisor)
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('revisor.home') }}">
-                    Revisor Casa
-                    <span class="badge rounded-pill bg-danger">
+
+            
+            <span class="btn btn-danger mx-3">
+                <a class="mx-3 text-decoration-none tx-w" href="{{ route('revisor.home') }}">Revisor
+
                         {{\App\Models\Announcement::ToBeRevisionedCount() }}
-                    </span>
+                 
                 </a>
-            </li>
+            </span>
+            
+
             @endif
             <!-- acaba revisor -->
             @endguest

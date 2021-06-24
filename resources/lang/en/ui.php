@@ -1,7 +1,7 @@
 
 <?php
 return [
-    'welcome'=>'Welcome to rapido.es',
+    'welcome'=>'Welcome to Rapido',
     'newAdd'=>'New Add',
     'category'=>'Category',
     'motorbikes'=>'Motorbikes',
