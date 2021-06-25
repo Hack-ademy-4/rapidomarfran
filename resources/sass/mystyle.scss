@@ -1,5 +1,5 @@
 *{
-    font-family: 'KoHo', sans-serif;
+    font-family: 'Jura', sans-serif;
 }
 
 :root{
@@ -26,7 +26,7 @@
 }
 
 .b-nav{
-    border: 2px solid var(--sec-color);
+    background-color: #F8F9FA;
 }
 
 .banderas {
@@ -54,6 +54,50 @@
   -webkit-text-fill-color: transparent;
 }
 
+.bg-footer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+.bg-footer::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 70%;
+    bottom: -120px;
+    right: -60px;
+    background: linear-gradient(120deg, #f3f3f3, #f3f3f3) padding-box, linear-gradient(120deg, var(--main-color), var(--accent-color)) border-box;
+    border: 4px solid transparent;
+    border-radius: 50px 0 0 50px;
+    z-index: -1;
+    opacity: 0.2;
+    transform: rotate(50deg);
+  }
+
+  
+  .swiper-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, var(--main-color), var(--accent-color));
+  }
+
+  .swiper-pagination-bullet {
+      background-color: var(--accent-color);
+  }
 
 
-
+.categories {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
