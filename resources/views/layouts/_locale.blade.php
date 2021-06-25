@@ -1,5 +1,5 @@
 
-<div class="banderas mx-3">
+<div class="">
     <form action="{{route('locale',['locale'=>$lang])}}" method="POST">
         @csrf
             <button type="submit" class="nav-link" style="border:none;background-color:transparent">

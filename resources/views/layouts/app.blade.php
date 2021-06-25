@@ -10,8 +10,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
@@ -25,13 +24,14 @@
         <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
         @endif
         
-      
+        
         @yield('content')
-
-
+        
+        
         @include('layouts._footer')
     </div>
     <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/4885c16ff9.js" crossorigin="anonymous"></script>
     <script src="{{mix('js/app.js')}}"></script>
     
 </body>
