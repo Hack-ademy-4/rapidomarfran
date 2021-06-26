@@ -12,7 +12,7 @@
 </div>
 
 <
-    <div class="container headline">
+    <div class="container">
       <div class="section-title">
         <!-- entrar en rapido -->
         <h2>Login en <span> Rapido.es</span></h2>
@@ -70,7 +70,7 @@
          <!--  <div class="sent-message text-center">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div> -->
         </div>
         <!-- entrar -->
-        <div class="text-center"><button class="btn btn-outline-dark" type="button">Entrar</button></div>
+        <div class="text-center"><button class="btn btn-outline-dark" type="submit">Entrar</button></div>
       </form>
     </div>
   
