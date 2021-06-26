@@ -3,10 +3,18 @@
 
 
 <!-- bienvenido -->
+<div class="container my-5 py-5 ">
+    <div class="row r">
+        <div class="col-12">
+            @if(session('announcement.create.success'))
+            <div class="alert alert-success">{{session('announcement.create.success')}}</div>
+            @endif
+        </div>
+    </div>
+</div>
 
 
-
-<div class="container my-5 py-5 head">
+<div class="container my-5 py-5 head headline">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
@@ -16,11 +24,8 @@
     </div>
 </div>
 
-@if(session('announcement.create.success'))
-<div class="alert alert-success">{{session('announcement.create.success')}}</div>
-@endif
 
-<div class="container my-5 py-5">
+<div class="container my-5 py-5 headline">
     <div class="row">
         <div class="col-12 text-center">
             <h2 class="tx-sec">¿Que estas buscando? 🤩</h2>
@@ -70,7 +75,7 @@
 
 
 
-<div class="container my-5 py-5">
+<div class="container my-5 py-5 headline">
     <div class="row">
         @foreach($announcements as $announcement)
         <div class="col-12 col-md-4">
@@ -85,10 +90,11 @@
                     <p class="card-text">{{$announcement->user->name}}</p>
                     <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
                     <p class="card-text">{{__('ui.category')}}
-                        <a href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a>
+                        <a
+                            href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
+                        </a>
                     </p>
-                    <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
-                        class="btn btn-sm btn-outline-none title">{{__('ui.read')}}</a>
+                    <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"class="btn btn-sm btn-outline-none title">{{__('ui.read')}}</a>
                 </div>
             </div>
         </div>
@@ -96,12 +102,6 @@
     </div>
 </div>
 
-
-<div class="container my-5 py-5 ">
-    <div class="row">
-
-    </div>
-</div>
 
 
 

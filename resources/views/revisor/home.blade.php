@@ -2,7 +2,18 @@
 @extends('layouts.app')
 @section('content')
 @if ($announcement)
-<div class='container'>
+
+<div class="container my-5 py-5 head headline">
+    <div class="row h-100 align-items-center">
+        <div class="col-12 col-md-4">
+            <h1 class="display-3 fw-bolder title">Revisor home page</h1>
+            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam
+                deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+        </div>
+    </div>
+</div>
+
+<div class='container headline'>
   <div class='row my-4'>
       <div class='col-12'>
           <div class="card">

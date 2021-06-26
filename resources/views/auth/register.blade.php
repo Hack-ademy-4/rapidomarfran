@@ -3,7 +3,7 @@
 @section('content') 
 
 
-<div class="container my-5 py-5 head">
+<div class="container my-5 py-5 head headline">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">Register</h1>
@@ -11,10 +11,8 @@
         </div>
     </div>
 </div>
-<!-- ======= Book A Table Section ======= -->
-<section id="book-a-table" class="book-a-table">
-    <div class="container">
-      <div class="section-title">
+
+    <div class="container headline">
         <!-- registrate a rapido.es -->
         <h2>Registrate a<span> Rapido.es</span></h2>
         <!-- rellena todos los campos -->
@@ -75,8 +73,8 @@
           <!-- <div class="sent-message text-center">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div> -->
         </div>
         <!-- registrar -->
-        <div class="text-center"><button class="boton" type="submit">Registrar</button></div>
+        <div class="text-center"><button class="btn btn-outline-dark" type="button">Registrar</button></div>
       </form>
     </div>
-  </section>
+
 @endsection

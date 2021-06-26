@@ -11,9 +11,8 @@
     </div>
 </div>
 
-<!-- ======= Book A Table Section ======= -->
-<section id="book-a-table" class="book-a-table">
-    <div class="container">
+<
+    <div class="container headline">
       <div class="section-title">
         <!-- entrar en rapido -->
         <h2>Login en <span> Rapido.es</span></h2>
@@ -71,8 +70,8 @@
          <!--  <div class="sent-message text-center">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div> -->
         </div>
         <!-- entrar -->
-        <div class="text-center"><button class="boton" type="submit">Entrar</button></div>
+        <div class="text-center"><button class="btn btn-outline-dark" type="button">Entrar</button></div>
       </form>
     </div>
-  </section><!-- End Book A Table Section -->
+  
 @endsection

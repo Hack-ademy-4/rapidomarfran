@@ -34,6 +34,8 @@
         
         @include('layouts._footer')
     </div>
+    <!--scroll reveal cdn-->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Scripts fontawasome -->
     <script src="https://kit.fontawesome.com/4885c16ff9.js" crossorigin="anonymous"></script>
     <!-- Scripts Swiper-->
@@ -41,21 +43,9 @@
     <!-- Scripts js-->
     <script src="{{mix('js/app.js')}}"></script>
     
-    <!-- Initialize Swiper -->
+    
     <script>
-        var swiper = new Swiper(".mySwiper", {
-          effect: "cube",
-          grabCursor: true,
-          cubeEffect: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-          },
-        });
+        
     </script>
 </body>
 

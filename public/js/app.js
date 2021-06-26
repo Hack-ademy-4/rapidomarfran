@@ -4994,6 +4994,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   \******************************/
 /***/ (() => {
 
+/* logout */
 var logout = document.getElementById('logoutBtn');
 
 if (logout) {
@@ -5002,6 +5003,31 @@ if (logout) {
     var form = document.getElementById('logoutForm').submit();
   });
 }
+/* Initialize Swiper  */
+
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "cube",
+  grabCursor: true,
+  cubeEffect: {
+    shadow: true,
+    slideShadows: true,
+    shadowOffset: 20,
+    shadowScale: 0.94
+  },
+  pagination: {
+    el: ".swiper-pagination"
+  }
+});
+/* scroll reveal */
+
+ScrollReveal().reveal('.headline', {
+  duration: 1500,
+  delay: 500,
+  distance: '80px',
+  interval: 600,
+  easing: 'cubic-bezier(0.5, 0, 0, 1)'
+});
 
 /***/ }),
 
