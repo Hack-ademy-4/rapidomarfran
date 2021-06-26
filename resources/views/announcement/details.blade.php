@@ -1,5 +1,15 @@
 @extends('layouts.app')
 @section('content')
+
+
+<div class="container my-5 py-5 head">
+    <div class="row h-100 align-items-center">
+        <div class="col-12 col-md-4">
+            <h1 class="display-3 fw-bolder title">Get started</h1>
+            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+        </div>
+    </div>
+</div>
 <!-- detalle del anuncio -->
 <h1>Detalle del anuncio: {{$announcement->name}}</h1>
 <div class="row my-3">

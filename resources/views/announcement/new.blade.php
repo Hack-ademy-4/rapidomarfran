@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+
+
+<div class="container my-5 py-5 head">
+    <div class="row h-100 align-items-center">
+        <div class="col-12 col-md-4">
+            <h1 class="display-3 fw-bolder title">Vendes lo que no usa en casa</h1>
+            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+        </div>
+    </div>
+</div>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
