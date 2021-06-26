@@ -5,40 +5,34 @@
 <div class="container my-5 py-5 head">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-            <h1 class="display-3 fw-bolder title">Get started</h1>
-            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+            <h3 class="display-3 fw-bolder title">Detalle del anuncio: {{$announcement->name}}</h3>
         </div>
     </div>
 </div>
-<!-- detalle del anuncio -->
-<h1>Detalle del anuncio: {{$announcement->name}}</h1>
-<div class="row my-3">
-    <div class="col-12 col-md-8 offset-md-2">
-        <div class="card card border-0 shadow" style="width: 30rem;">
-            <div class="card-header">
-                {{$announcement->title}}
-            </div>
-            <p>
-                {{$announcement->price}}
-            </p>          
-            <div class="car-body d-flex">
-                <img src="https://picsum.photos/id/1/200/300" alt="">
-                <p>
-                    {{$announcement->body}}
-                </p>
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-                <!-- categoria -->
-                <strong>Categoria:{{$announcement->category->name}}</strong>
-                <i class="bi bi-calendar-check px-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
-                        <path
-                            d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                        <path
-                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                <i>{{$announcement->created_at->format('d/m/Y')}}-{{$announcement->user->name}}</i>
+
+
+<div class="container my-5 py-5">
+    <div class="row h-100 align-items-center mx-5">
+        <iframe style="border:0; width: 50%; height: 600px;"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+            frameborder="0" allowfullscreen></iframe>
+
+        <div class="col-12 col-md-6">
+            <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
+                <img src="https://picsum.photos/id/1/200/300" class="card-img-top" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{$announcement->title}}</h5>
+                    <p class="card-text">{{$announcement->price}}$</p>
+                    <p class="card-text">{{$announcement->body}}</p>
+                    <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
+                    <p class="card-text">{{$announcement->user->name}}</p>
+                </div>
+
             </div>
         </div>
+
     </div>
 </div>
+
+
 @endsection
