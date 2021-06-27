@@ -5,8 +5,8 @@
 <div class="container my-5 py-5 head">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-            <h1 class="display-3 fw-bolder title">Vendes lo que no usa en casa</h1>
-            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+            <h1 class="display-3 fw-bolder title">Agregar un nuevo producto</h1>
+            <p class="small mt-5 tx-muted">Gana dinero en Rapido simplemente vendiendo lo que no usas</p>
         </div>
     </div>
 </div>
@@ -68,7 +68,7 @@
                             @enderror
                         </div>
                         <!--  enviar   -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
                     </form>
                 </div>
             </div>

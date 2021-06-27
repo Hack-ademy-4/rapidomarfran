@@ -5,7 +5,7 @@
 <div class="container my-5 py-5 head">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-            <h3 class="display-3 fw-bolder title">Detalle del anuncio: {{$announcement->name}}</h3>
+            <h3 class="display-3 fw-bolder title">Tu anuncio favorito: {{$announcement->name}}</h3>
         </div>
     </div>
 </div>

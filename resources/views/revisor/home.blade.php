@@ -5,9 +5,8 @@
 <div class="container my-5 py-5 head headline">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-            <h1 class="display-3 fw-bolder title">Revisor home page</h1>
-            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam
-                deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+            <h1 class="display-3 fw-bolder title">Todos los artículos a la espera de ser revisados</h1>
+            <p class="small mt-5 tx-muted">Empiece ahora con un simple clic</p>
         </div>
     </div>
 </div>
@@ -79,7 +78,7 @@
 <div class="container my-5 py-5 head headline">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-            <h3 class="text-center"> No hay anuncios para revisar </h3>
+            <h3 class="text-center"> No hay mas anuncios para revisar </h3>
         </div>
     </div>
 </div>

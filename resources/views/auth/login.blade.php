@@ -5,8 +5,8 @@
 <div class="container my-5 py-5 head">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-            <h1 class="display-3 fw-bolder title">Get started</h1>
-            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+            <h1 class="display-3 fw-bolder title">Entra en Rapido</h1>
+            <p class="small mt-5 tx-muted">La plataforma líder de compraventa de productos de segunda mano.</p>
         </div>
     </div>
 </div>
@@ -14,10 +14,8 @@
 <
     <div class="container">
       <div class="section-title">
-        <!-- entrar en rapido -->
-        <h2>Login en <span> Rapido.es</span></h2>
         <!-- rellena los campos con tu datos -->
-        <p class=" text-center subtitulo"=>Rellena los campos con tu datos.</p>
+        <p class="text-center subtitulo">Rellena los campos con tu datos.</p>
       </div>
       @if ($errors->any())
       <div class="alert alert-danger">

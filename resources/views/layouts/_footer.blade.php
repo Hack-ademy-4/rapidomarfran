@@ -20,9 +20,7 @@
   </div>
   <div class="row mt-4">
     <div class="col-12 col-md-4">
-      <p class="small text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam exercitationem,
-        repudiandae eaque alias, maxime accusantium sunt fuga deserunt ipsum odio animi quaerat aperiam modi delectus
-        nobis blanditiis cum quam praesentium.</p>
+      <p class="small text-muted">La plataforma líder de compraventa de productos de segunda mano.</p>
     </div>
     <div class="col-12 col-md-4 d-flex justify-content-center">
       <ul class="list-unstyled">
@@ -30,6 +28,7 @@
         <li class="text-decoration-none title mb-3">Mas info</li>
         <li class="text-decoration-none title mb-3">productos</li>
         <li class="text-decoration-none title mb-3">redes sociales</li>
+        <li class="text-decoration-none title mb-3">&copy; Copyright Maria y Francesco 2021</li>
       </ul>
     </div>
     <div class="col-12 col-md-4">

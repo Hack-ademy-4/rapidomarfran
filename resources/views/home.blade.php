@@ -18,8 +18,7 @@
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
-            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam
-                deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+            <p class="small mt-5 tx-muted">La plataforma líder de compraventa de productos de segunda mano.</p>
         </div>
     </div>
 </div>
@@ -33,9 +32,7 @@
     </div>
     <div class="row align-items-center text-center my-3 py-3">
         <div class="col-12">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nostrum minima inventore? Corrupti
-                consequuntur dolores mollitia distinctio minima qui accusamus iure voluptate, ad a, tempora pariatur
-                culpa id tenetur architecto.</p>
+            <p>Los productos de segunda mano añadidos recientemente</p>
         </div>
         <!-- Swiper -->
        <!--  <div class="col-12 col-md-6">
@@ -76,7 +73,7 @@
 
 
 
-<div class="container my-5 py-5 headline">
+<div class="container my-5 py-5">
     <div class="row">
         @foreach($announcements as $announcement)
         <div class="col-12 col-md-4">

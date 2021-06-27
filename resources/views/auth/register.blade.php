@@ -6,16 +6,13 @@
 <div class="container my-5 py-5 head headline">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-            <h1 class="display-3 fw-bolder title">Register</h1>
-            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+            <h1 class="display-3 fw-bolder title">Registrate a Rapido</h1>
+            <p class="small mt-5 tx-muted">La plataforma líder de compraventa de productos de segunda mano.</p>
         </div>
     </div>
 </div>
 
     <div class="container headline">
-        <!-- registrate a rapido.es -->
-        <h2>Registrate a<span> Rapido.es</span></h2>
-        <!-- rellena todos los campos -->
         <p class="text-center">Rellena los todos los campos.</p>
       </div>
       @if ($errors->any())
@@ -73,7 +70,7 @@
           <!-- <div class="sent-message text-center">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div> -->
         </div>
         <!-- registrar -->
-        <div class="text-center"><button class="btn btn-outline-dark" type="submit">Registrar</button></div>
+        <div class="text-center"><button class="btn btn-outline-dark" type="submit">Enviar</button></div>
       </form>
     </div>
 

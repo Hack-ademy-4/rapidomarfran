@@ -7,7 +7,7 @@
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
-            <p class="small mt-5 tx-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quam deserunt, ab, iste nesciunt eos expedita fugit possimus esse officiis qui minima</p>
+            <p class="small mt-5 tx-muted">La plataforma líder de compraventa de productos de segunda mano.</p>
         </div>
     </div>
 </div>
