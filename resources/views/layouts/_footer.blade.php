@@ -35,16 +35,16 @@
     <div class="col-12 col-md-4">
       <ul class="list-unstyled d-flex justify-content-around">
         <li class="text-decoration-none tx-main">
-          <i class="fab fa-facebook-square"></i>
+          <a class="text-decoration-none tx-main" href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
         </li>
         <li class="text-decoration-none tx-main">
-          <i class="fab fa-linkedin"></i>
+          <a  class="text-decoration-none tx-main" href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
         </li>
         <li class="text-decoration-none tx-main">
-          <i class="fab fa-instagram"></i>
+          <a  class="text-decoration-none tx-main" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
         </li>
         <li class="text-decoration-none tx-main">
-          <i class="fab fa-twitter"></i>
+          <a  class="text-decoration-none tx-main" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
         </li>
       </ul>
     </div>

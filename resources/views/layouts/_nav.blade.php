@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-4 shadow-sm fixed-top bg-white">
+<nav class="navbar navbar-expand-lg p-4 shadow-sm fixed-top b-nav">
 
     <div class="container-fluid d-flex align-items-center">
 

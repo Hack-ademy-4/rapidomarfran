@@ -31,14 +31,15 @@
             <h2 class="tx-sec">¿Que estas buscando? 🤩</h2>
         </div>
     </div>
-    <div class="row align-items-center my-3 py-3">
-        <div class="col-12 col-md-6">
+    <div class="row align-items-center text-center my-3 py-3">
+        <div class="col-12">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nostrum minima inventore? Corrupti
                 consequuntur dolores mollitia distinctio minima qui accusamus iure voluptate, ad a, tempora pariatur
                 culpa id tenetur architecto.</p>
         </div>
-        <div class="col-12 col-md-6">
-            <!-- Swiper -->
+        <!-- Swiper -->
+       <!--  <div class="col-12 col-md-6">
+            
             <div class="swiper-container mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -69,7 +70,7 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

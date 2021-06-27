@@ -10920,32 +10920,32 @@ textarea.form-control-lg {
   transform: rotate(50deg);
 }
 
-.swiper-container {
-  width: 150px;
-  height: 150px;
-}
+/* .swiper-container {
+    width: 150px;
+    height: 150px;
+  }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(120deg, var(--main-color), var(--accent-color));
-}
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, var(--main-color), var(--accent-color));
+  }
 
-.swiper-pagination-bullet {
-  background-color: var(--accent-color);
-}
+ .swiper-pagination-bullet {
+      background-color: var(--accent-color);
+  }
+
 
 .categories {
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 .flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;

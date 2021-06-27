@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +35,9 @@
         
         @include('layouts._footer')
     </div>
-    <!--scroll reveal cdn-->
+
+   
+    <!--Scroll reveal cdn-->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Scripts fontawasome -->
     <script src="https://kit.fontawesome.com/4885c16ff9.js" crossorigin="anonymous"></script>
