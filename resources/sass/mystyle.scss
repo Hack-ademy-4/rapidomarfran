@@ -2,6 +2,10 @@
     font-family: 'Jura', sans-serif;
 }
 
+body{
+    background-color: #F8F9FA;
+}
+
 :root{
     --main-color: #5d0079;
     --sec-color: #65466f;
@@ -41,7 +45,7 @@
 
 
 .head {
-    height: 50vh;
+    height: 100vh;
     min-height: 500px;
     background: url('/images/Group 3.png');
     background-size: contain;
@@ -107,15 +111,17 @@
   }
 
   
-  /* .swiper-container {
-    width: 150px;
-    height: 150px;
+.swiper-container {
+    width: 200px;
+    height: 200px;
   }
 
   .swiper-slide {
+    border-radius: 5px;
     background-position: center;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(120deg, var(--main-color), var(--accent-color));
@@ -124,12 +130,3 @@
  .swiper-pagination-bullet {
       background-color: var(--accent-color);
   }
-
-
-.categories {
-    height: 100px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */

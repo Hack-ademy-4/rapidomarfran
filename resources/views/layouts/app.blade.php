@@ -47,9 +47,7 @@
     <script src="{{mix('js/app.js')}}"></script>
     
     
-    <script>
-        
-    </script>
+    @stack('scripts')
 </body>
 
 </html>

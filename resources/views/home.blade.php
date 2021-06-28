@@ -4,7 +4,7 @@
 
 <!-- bienvenido -->
 <div class="container my-1 py-1 ">
-    <div class="row r">
+    <div class="row">
         <div class="col-12">
             @if(session('announcement.create.success'))
             <div class="alert alert-success">{{session('announcement.create.success')}}</div>
@@ -25,70 +25,48 @@
 
 
 <div class="container my-5 py-5 headline">
-    <div class="row">
-        <div class="col-12 text-center">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6">
             <h2 class="tx-sec">{{__('ui.textSearch')}} 🤩</h2>
+            <p class="mt-3 fw-bold">{{__('ui.products')}}</p>
         </div>
-    </div>
-    <div class="row align-items-center text-center my-3 py-3">
-        <div class="col-12">
-            <p>{{__('ui.products')}}</p>
-        </div>
-        <!-- Swiper -->
-       <!--  <div class="col-12 col-md-6">
-            
+        <div class="col-12 col-md-6 text-center">
+            <!-- Swiper -->
             <div class="swiper-container mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="categories">
-                            <i class="fas fa-car fa-3x tx-w"></i>
-                        </div>
-                    </div>
+                    @foreach ($categories as $category)
                     <div class="swiper-slide">
                         <div>
-                            <i class="fas fa-book fa-3x tx-w"></i>
+                            <a class="text-decoration-none tx-w fw-bold h5" href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
+                                {{$category->name}}</a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div>
-                            <i class="fas fa-car fa-3x tx-w"></i>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div>
-                            <i class="fas fa-car fa-3x tx-w"></i>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div>
-                            <i class="fas fa-car fa-3x tx-w"></i>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-        </div> -->
+        </div>   
     </div>
-</div>
-
-
-
-<div class="container my-5 py-5">
-    <div class="row">
-        @foreach($announcements as $announcement)
-        <div class="col-12 col-md-4 d-flex justify-content-center">
-
-            <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
-
-                <img src="https://picsum.photos/id/1/200/300" class="card-img-top" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{$announcement->title}}</h5>
-                    <p class="card-text">{{$announcement->price}}$</p>
-                    <p class="card-text">{{$announcement->body}}</p>
-                    <p class="card-text">{{$announcement->user->name}}</p>
-                    <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
-                    <p class="card-text">{{__('ui.category')}}
-                        <a
+    
+    <div class="container my-5 py-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="tx-main">Descubre mas sobre los ultimos anuncios</h2>
+            </div>
+            @foreach($announcements as $announcement)
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                
+                <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
+                    
+                    <img src="https://picsum.photos/id/1/200/300" class="card-img-top" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$announcement->title}}</h5>
+                        <p class="card-text">{{$announcement->price}}$</p>
+                        <p class="card-text">{{$announcement->body}}</p>
+                        <p class="card-text">{{$announcement->user->name}}</p>
+                        <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
+                        <p class="card-text">{{__('ui.category')}}
+                            <a
                             href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
                         </a>
                     </p>
@@ -103,12 +81,23 @@
 
 
 
-
-
-
-
-
-
-
+@push('scripts')
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "cube",
+        grabCursor: true,
+        cubeEffect: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>
+@endpush
 
 @endsection
