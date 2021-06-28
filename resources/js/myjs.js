@@ -10,7 +10,7 @@ if (logout) {
 
 /* Initialize Swiper  */
 
-var swiper = new Swiper(".mySwiper", {
+/* var swiper = new Swiper(".mySwiper", {
     effect: "cube",
     grabCursor: true,
     cubeEffect: {
@@ -22,7 +22,7 @@ var swiper = new Swiper(".mySwiper", {
     pagination: {
       el: ".swiper-pagination",
     },
-  });
+  }); */
 
   /* scroll reveal */
 

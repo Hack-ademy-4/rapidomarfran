@@ -30,7 +30,7 @@ class PublicController extends Controller
         ->where('is_accepted', true)
         ->orderBy('created_at', 'desc')
         ->paginate(5);
-        return view('announcements', compact('category', 'announcements'));
+        return view('category.announcements', compact('category', 'announcements'));
 
        /*  $category = Category::find($category_id);
         $announcements = $category->announcements()->orderBy('created_at','desc')->paginate(5); 
