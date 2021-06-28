@@ -18,7 +18,7 @@
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
-            <p class="small mt-5 tx-muted">La plataforma líder de compraventa de productos de segunda mano.</p>
+            <p class="small mt-5 tx-muted">{{__('ui.slogan')}}</p>
         </div>
     </div>
 </div>
@@ -27,12 +27,12 @@
 <div class="container my-5 py-5 headline">
     <div class="row">
         <div class="col-12 text-center">
-            <h2 class="tx-sec">¿Que estas buscando? 🤩</h2>
+            <h2 class="tx-sec">{{__('ui.textSearch')}} 🤩</h2>
         </div>
     </div>
     <div class="row align-items-center text-center my-3 py-3">
         <div class="col-12">
-            <p>Los productos de segunda mano añadidos recientemente</p>
+            <p>{{__('ui.products')}}</p>
         </div>
         <!-- Swiper -->
        <!--  <div class="col-12 col-md-6">
@@ -76,7 +76,7 @@
 <div class="container my-5 py-5">
     <div class="row">
         @foreach($announcements as $announcement)
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
 
             <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
 

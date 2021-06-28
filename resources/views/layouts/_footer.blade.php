@@ -20,14 +20,13 @@
   </div>
   <div class="row mt-4">
     <div class="col-12 col-md-4">
-      <p class="small text-muted">La plataforma líder de compraventa de productos de segunda mano.</p>
+      <p class="small text-muted">{{__('ui.slogan')}}</p>
     </div>
     <div class="col-12 col-md-4 d-flex justify-content-center">
       <ul class="list-unstyled">
-        <li class="text-decoration-none title mb-3">Contacta</li>
-        <li class="text-decoration-none title mb-3">Mas info</li>
-        <li class="text-decoration-none title mb-3">productos</li>
-        <li class="text-decoration-none title mb-3">redes sociales</li>
+        <li class="text-decoration-none title mb-3">{{__('ui.contact')}}</li>
+        <li class="text-decoration-none title mb-3">{{__('ui.info')}}</li>
+        <li class="text-decoration-none title mb-3">{{__('ui.social')}}</li>
         <li class="text-decoration-none title mb-3">&copy; Copyright Maria y Francesco 2021</li>
       </ul>
     </div>

@@ -10869,11 +10869,11 @@ textarea.form-control-lg {
 }
 
 .head {
-  height: 100vh;
+  height: 50vh;
   min-height: 500px;
   background: url("/images/Group 3.png");
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
@@ -10895,11 +10895,20 @@ textarea.form-control-lg {
   transition: transform 0.3s;
 }
 
-.sizeCard {
-  height: 20rem;
-  width: 20rem;
+.btn-outline-violet {
+  border-color: var(--main-color);
+  color: var(--main-color);
 }
 
+.btn-outline-violet:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+/* .sizeCard{
+    height: 20rem;
+    width: 20rem; 
+} */
 .bg-footer {
   position: relative;
   overflow: hidden;

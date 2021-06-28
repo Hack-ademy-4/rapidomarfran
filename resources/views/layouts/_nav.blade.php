@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-4 shadow-sm fixed-top b-nav">
+<nav class="navbar navbar-expand-lg p-4 mb-2 shadow-sm fixed-top b-nav">
 
     <div class="container-fluid d-flex align-items-center">
 
@@ -86,12 +86,12 @@
             @guest
             @if (Route::has('login'))
             <div class="mx-3 btn btn-warning">
-                <a class="text-decoration-none tx-w"  href="{{route('login')}}">Login</a>
+                <a class="text-decoration-none tx-w"  href="{{route('login')}}">{{__('ui.login')}}</a>
             </div>
             @endif
             @if (Route::has('register'))
             <div class="mx-3 btn btn-warning">
-                <a class="text-decoration-none tx-w"  href="{{route('register')}}">Register</a>
+                <a class="text-decoration-none tx-w"  href="{{route('register')}}">{{__('ui.register')}}</a>
             </div>
             @endif
             @else
@@ -99,14 +99,14 @@
                 <form id="logoutForm" action="{{route('logout')}}" method="POST">
                     @csrf
                 </form>
-                <a class="text-decoration-none tx-w"  id="logoutBtn" class="" href="#">logout</a>
+                <a class="text-decoration-none tx-w"  id="logoutBtn" class="" href="#">{{__('ui.logout')}}</a>
             </div>
             <!-- revisor -->
             @if (Auth::user()->is_revisor)
 
             
             <span class="btn btn-danger mx-3">
-                <a class="mx-3 text-decoration-none tx-w" href="{{ route('revisor.home') }}">Revisor
+                <a class="mx-3 text-decoration-none tx-w" href="{{ route('revisor.home') }}">{{__('ui.revisor')}}
 
                         {{\App\Models\Announcement::ToBeRevisionedCount() }}
                  
