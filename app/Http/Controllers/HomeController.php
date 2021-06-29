@@ -26,29 +26,37 @@ class HomeController extends Controller
     return view('home');
     }
 
-    public function newAnnouncement() 
-    {
-    return view('announcement.new'); 
-    }
+    
+     public function newAnnouncement() 
+     {
+         $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+         return view('announcement.new', compact('uniqueSecret')); 
+     }
+
+    
     public function createAnnouncement(AnnouncementRequest $request)
-    
     {
-    $a = new Announcement();
-    $a->title = $request->input('title');
-    $a->body = $request->input('body');
-    $a->category_id = $request->input('category');
-    $a->price = $request->input('price');
-    $a->user_id = Auth::id();
-    $a->save();
-    return redirect('/')->with('announcement.create.success','Anuncio creado con exito');
-    
+        $a = new Announcement();
+        $a->title = $request->input('title');
+        $a->body = $request->input('body');
+        $a->price = $request->input('price');
+        $a->category_id = $request->input('category');
+        $a->user_id = Auth::id();
+        $a->save();
+        $uniqueSecret = $request->input('uniqueSecret');
+        dd($uniqueSecret);
+        
+        return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
     }
+    
     public function details($id) 
 
     {
         $announcement = Announcement::findOrFail($id);
         return view("announcement.details",["announcement"=>$announcement]);
     }
+    
+
 
 
 
