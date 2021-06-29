@@ -13,7 +13,6 @@
     </div>
 </div>
 
-
 <div class="container  head headline">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
@@ -22,9 +21,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 <div class="container my-5 py-5 headline">
     <div class="row align-items-center">
@@ -92,16 +88,16 @@
                                 href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
                             </a>
                         </p>
-                        <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
-                            class="btn btn-sm btn-outline-none title">{{__('ui.read')}}</a>
+                       
+                            <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
+                                class="btn btn-sm btn-outline-none title">{{__('ui.read')}}</a>
+                       
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
-
-
 
 
     @push('scripts')
