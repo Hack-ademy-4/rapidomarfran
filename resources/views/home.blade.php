@@ -3,7 +3,7 @@
 
 
 <!-- bienvenido -->
-<div class="container my-5 py-5 ">
+<div class="container mt-5 pt-5 ">
     <div class="row">
         <div class="col-12">
             @if(session('announcement.create.success'))
@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="container my-5 py-5 head headline">
+<div class="container  head headline">
     <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
@@ -39,7 +39,8 @@
                     @foreach ($categories as $category)
                     <div class="swiper-slide">
                         <div>
-                            <a class="text-decoration-none tx-w fw-bold h5" href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
+                            <a class="text-decoration-none tx-w fw-bold h5"
+                                href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
                                 {{$category->name}}</a>
                         </div>
                     </div>
@@ -47,9 +48,9 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-        </div>   
+        </div>
     </div>
-    
+
     <div class="container my-5 py-5">
         <div class="row">
             <div class="col-12 text-center">
@@ -57,10 +58,29 @@
             </div>
             @foreach($announcements as $announcement)
             <div class="col-12 col-md-4 d-flex justify-content-center">
-                
+
                 <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
-                    
-                    <img src="https://picsum.photos/id/1/200/300" class="card-img-top" alt="Card image cap">
+
+
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach ($announcement->images as $image)
+                            <div class="carousel-item @if($loop->first)active @endif">
+                                <img src="{{Storage::url($image->getUrl(300,150))}}" class=" d-block w-100" alt="...">
+                            </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Title:{{$announcement->title}}</h5>
                         <p class="card-text">Price:{{$announcement->price}}$</p>
@@ -69,40 +89,40 @@
                         <p class="card-text">Date ad:{{$announcement->created_at->format('d/m/Y')}}</p>
                         <p class="card-text">{{__('ui.category')}}:
                             <a
-                            href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
-                        </a>
-                    </p>
-                    <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"class="btn btn-sm btn-outline-none title">{{__('ui.read')}}</a>
+                                href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
+                            </a>
+                        </p>
+                        <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
+                            class="btn btn-sm btn-outline-none title">{{__('ui.read')}}</a>
+                    </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
-</div>
 
 
 
 
-@push('scripts')
+    @push('scripts')
 
-<script>
-    /*  Initialize Swiper  */
+    <script>
+        /*  Initialize Swiper  */
 
-var swiper = new Swiper(".mySwiper", {
-  effect: "cube",
-  grabCursor: true,
-  cubeEffect: {
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: 20,
-      shadowScale: 0.94,
-  },
-  pagination: {
-      el: ".swiper-pagination",
-  },
-});
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cube",
+            grabCursor: true,
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
 
-</script>
-@endpush 
- -->
-@endsection
+    </script>
+    @endpush
+    @endsection

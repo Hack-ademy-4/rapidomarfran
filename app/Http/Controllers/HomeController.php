@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
@@ -59,6 +60,9 @@ class HomeController extends Controller
 
         foreach($images as $image)
         {
+
+            dispatch(new ResizeImage($newFilePath,300,150));
+
             $i = new AnnouncementImage;
             $fileName = basename($image);
             $newFilePath = "public/announcements/{$a->id}/{$fileName}";
@@ -85,10 +89,11 @@ class HomeController extends Controller
 
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+        dispatch(new ResizeImage($filePath,120,120));
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(
             [
-                'id'=>$fileName
+                'id'=>$filePath
             ]
            /*  session()->get("images.{$uniqueSecret}") */
             
@@ -115,9 +120,12 @@ class HomeController extends Controller
         $data = [];
 
         foreach ($images as $image) {
+
+            
              $data[] = [
 
                 'id' => $image,
+                'src' => AnnouncementImage::getUrlByFilePath($image,120,120),
                 'name' => basename($image),
                 'src' => Storage::url($image),
                 'size'=> Storage::size($image)
