@@ -17,7 +17,10 @@
             <h1 class="display-3 fw-bolder title">Todos los artículos a la espera de ser revisados</h1>
             <p class="small mt-3 tx-muted">Empiece ahora con un simple clic</p>
         </div>
-        <div class="card">
+
+        <div class="container">
+        </div>
+        <div class="card col-6">
             <div class="card-header">
                 <!-- anuncio -->
                 Anuncio #{{$announcement->id}}
@@ -91,5 +94,3 @@
 </div>
 @endif
 @endsection
-
-

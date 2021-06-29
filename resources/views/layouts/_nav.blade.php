@@ -27,7 +27,7 @@
             @include('layouts._locale',["lang"=>'it','nation'=>'it'])
         </div> --}}
 
-        <div class="collapse navbar-collapse d-none d-md-block" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse d-flex d-md-block" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 
                 <li class="nav-item mx-3">

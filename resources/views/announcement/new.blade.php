@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
 <div class="container my-5 py-5">
     <div class="row my-5 py-5">
         <div class="col-12 text-center">
