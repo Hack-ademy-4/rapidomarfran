@@ -55,7 +55,23 @@ class HomeController extends Controller
         $announcement = Announcement::findOrFail($id);
         return view("announcement.details",["announcement"=>$announcement]);
     }
-    
+
+
+    public function uploadImages(Request $request)
+    {
+
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store('public/temp/{$uniqueSecret}');
+        session()->push('images.{$uniqueSecret}', $fileName);
+        return response()->json(
+            session()->get('images.{$uniqueSecret}')
+            
+        );
+        
+    }
+
+
+        
 
 
 
