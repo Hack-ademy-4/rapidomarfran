@@ -26,48 +26,51 @@ class HomeController extends Controller
 
     public function index()
     {
-    return view('home');
+        return view('home');
     }
 
     
-     public function newAnnouncement(Request $request) 
-     {    
+    public function newAnnouncement(Request $request) 
+    {    
          $uniqueSecret =$request->old(
              
-            'uniqueSecret',base_convert(sha1(uniqid(mt_rand())), 16, 36));  
+        'uniqueSecret',base_convert(sha1(uniqid(mt_rand())), 16, 36));  
         
          return view('announcement.new', compact('uniqueSecret')); 
-     }
+    }
 
     
     
-public function createAnnouncement(AnnouncementRequest $request)
-{
-    $a = new Announcement();
-    $a->title = $request->input('title');
-    $a->body = $request->input('body');
-    $a->price = $request->input('price');
-    $a->category_id = $request->input('category');
-    $a->user_id = Auth::id();
-    $a->save();
-    
-    $uniqueSecret = $request->input('uniqueSecret');
-    $images = session()->get("images.{$uniqueSecret}", []);
-    $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
-    $images = array_diff($images, $removedImages);
+    public function createAnnouncement(AnnouncementRequest $request)
+    {
 
-     foreach($images as $image){
-        $i = new AnnouncementImage;
-        $fileName = basename($image);
-        $newFilePath = "public/announcements/{$a->id}/{$fileName}";
-        Storage::move($image,$newFilePath);
-        $i->file = $newFilePath;
-        $i->announcement_id = $a->id;
-        $i->save(); 
-    }  
-    File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
-    return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito, será revisado en la mayor brevedad posible');
-} 
+        $a = new Announcement();
+        $a->title = $request->input('title');
+        $a->body = $request->input('body');
+        $a->price = $request->input('price');
+        $a->category_id = $request->input('category');
+        $a->user_id = Auth::id();
+        $a->save();
+    
+        $uniqueSecret = $request->input('uniqueSecret');
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+        $images = array_diff($images, $removedImages);
+
+        foreach($images as $image)
+        {
+            $i = new AnnouncementImage;
+            $fileName = basename($image);
+            $newFilePath = "public/announcements/{$a->id}/{$fileName}";
+            Storage::move($image,$newFilePath);
+            $i->file = $newFilePath;
+            $i->announcement_id = $a->id;
+            $i->save(); 
+        }  
+        
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
+        return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito, será revisado en la mayor brevedad posible');
+    } 
     
     public function details($id) 
 
@@ -102,14 +105,27 @@ public function createAnnouncement(AnnouncementRequest $request)
         return response()->json('ok');
     }
 
-
-
+    public function getImages(Request $request)
+    {       
+        $uniqueSecret = $request->input('uniqueSecret');
         
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+        $images = array_diff($images, $removedImages);
+        $data = [];
 
+        foreach ($images as $image) {
+             $data[] = [
 
+                'id' => $image,
+                'name' => basename($image),
+                'src' => Storage::url($image),
+                'size'=> Storage::size($image)
+             ];
+        }
 
-
-
+        return response()->json($data);
+    }
 
 
 }

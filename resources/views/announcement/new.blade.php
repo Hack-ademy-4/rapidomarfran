@@ -39,7 +39,7 @@
 
                             <div class="mb-3 title">
                                 <label for="announcementImages" class="form-label">Imagenes</label>
-                                <div class="dropzone" id="drophere"></div>
+                                <div class="dropzone" id="drophere" ></div>
                                 @error('images')
                                 <small class="alert alert-danger">{{ $message }}</small>
                                 @enderror

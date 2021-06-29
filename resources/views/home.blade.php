@@ -3,7 +3,7 @@
 
 
 <!-- bienvenido -->
-<div class="container my-1 py-1 ">
+<div class="container my-5 py-5 ">
     <div class="row">
         <div class="col-12">
             @if(session('announcement.create.success'))
@@ -22,6 +22,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <div class="container my-5 py-5 headline">
@@ -60,12 +62,12 @@
                     
                     <img src="https://picsum.photos/id/1/200/300" class="card-img-top" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">{{$announcement->title}}</h5>
-                        <p class="card-text">{{$announcement->price}}$</p>
-                        <p class="card-text">{{$announcement->body}}</p>
-                        <p class="card-text">{{$announcement->user->name}}</p>
-                        <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
-                        <p class="card-text">{{__('ui.category')}}
+                        <h5 class="card-title">Title:{{$announcement->title}}</h5>
+                        <p class="card-text">Price:{{$announcement->price}}$</p>
+                        <p class="card-text">Description:{{$announcement->body}}</p>
+                        <p class="card-text">Name seller:{{$announcement->user->name}}</p>
+                        <p class="card-text">Date ad:{{$announcement->created_at->format('d/m/Y')}}</p>
+                        <p class="card-text">{{__('ui.category')}}:
                             <a
                             href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
                         </a>
@@ -82,22 +84,25 @@
 
 
 @push('scripts')
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        effect: "cube",
-        grabCursor: true,
-        cubeEffect: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-    });
-</script>
-@endpush
 
+<script>
+    /*  Initialize Swiper  */
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "cube",
+  grabCursor: true,
+  cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+  },
+  pagination: {
+      el: ".swiper-pagination",
+  },
+});
+
+</script>
+@endpush 
+ -->
 @endsection

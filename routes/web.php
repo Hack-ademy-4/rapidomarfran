@@ -47,3 +47,6 @@ Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'
 
 //delete imagenes
 Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
+
+//Recuperar las imágenes después del error de validación
+Route::get('/announcement/images', [HomeController::class,'getImages'])->name('announcement.images');

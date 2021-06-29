@@ -61,6 +61,7 @@
 </div>
 
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-12">
             <form action="{{route('revisor.announcement.accept',['id'=>$announcement->id])}}" method="POST">
@@ -90,3 +91,5 @@
 </div>
 @endif
 @endsection
+
+
