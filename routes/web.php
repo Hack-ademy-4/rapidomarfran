@@ -42,5 +42,8 @@ Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'rejec
 //banderas
 Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('locale');
 
-//imagenes
+//upload imagenes
 Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'])->name('announcement.images.upload');
+
+//delete imagenes
+Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');

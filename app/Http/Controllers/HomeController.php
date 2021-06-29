@@ -30,9 +30,12 @@ class HomeController extends Controller
     }
 
     
-     public function newAnnouncement() 
-     {
-         $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+     public function newAnnouncement(Request $request) 
+     {    
+         $uniqueSecret =$request->old(
+             
+            'uniqueSecret',base_convert(sha1(uniqid(mt_rand())), 16, 36));  
+        
          return view('announcement.new', compact('uniqueSecret')); 
      }
 
@@ -47,10 +50,12 @@ public function createAnnouncement(AnnouncementRequest $request)
     $a->category_id = $request->input('category');
     $a->user_id = Auth::id();
     $a->save();
-    $uniqueSecret = $request->input('uniqueSecret');
     
-    $images = session()->get("images.{$uniqueSecret}");
-       
+    $uniqueSecret = $request->input('uniqueSecret');
+    $images = session()->get("images.{$uniqueSecret}", []);
+    $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+    $images = array_diff($images, $removedImages);
+
      foreach($images as $image){
         $i = new AnnouncementImage;
         $fileName = basename($image);
@@ -79,11 +84,24 @@ public function createAnnouncement(AnnouncementRequest $request)
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(
-            session()->get("images.{$uniqueSecret}")
+            [
+                'id'=>$fileName
+            ]
+           /*  session()->get("images.{$uniqueSecret}") */
             
         );
         
     }
+
+    public function removeImages(Request $request)
+    {       
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->input('id');
+        session()->push("removedImages.{$uniqueSecret}", $fileName);
+        Storage::delete($fileName);
+        return response()->json('ok');
+    }
+
 
 
         
