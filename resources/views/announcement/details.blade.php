@@ -16,13 +16,13 @@
                 <div id="carouselExampleControls" class="carousel slide rounded shadow" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{Storage::url($image->file)}}" class="d-block w-100 rounded" alt="...">
+                            <img src="https://via.placeholder.com/150" class="d-block w-100 rounded" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{Storage::url($image->file)}}" class="d-block w-100 rounded" alt="...">
+                            <img src="https://via.placeholder.com/150" class="d-block w-100 rounded" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{Storage::url($image->file)}}" class="d-block w-100 ruonded" alt="...">
+                            <img src="https://via.placeholder.com/150" class="d-block w-100 ruonded" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"

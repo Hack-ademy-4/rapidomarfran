@@ -30,7 +30,7 @@
             </p>
             
             <div class="car-body d-flex">
-                <img src="{{Storage::url($image->file)}}" alt="">
+                <img src="https://via.placeholder.com/150" alt="">
                 <p>
                     {{$announcement->body}}
                 </p>
@@ -44,4 +44,12 @@
     </div>
 </div>
 @endforeach
+
+<div class="row my-3">
+        <div class="col-12 col-md-8 offset-md-2">
+        {{ $announcements->links() }}
+        </div>
+    </div>
+    
+</div>
 @endsection
