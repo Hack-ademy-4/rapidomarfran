@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
 @if ($announcement)
-
-
-
 <div class='container py-5 my-5'>
     <div class='row my-4'>
         <div class="col-12 text-center">
@@ -13,12 +10,10 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-
                     <div class="col-7">
                         Anuncio #{{$announcement->id}}
                         <div class="row">
                             <div class="col-md-5">
-                                <!-- usuario -->
                                 <h3>Usuario</h3>
                             </div>
                             <div class="col-md-7">
@@ -30,7 +25,6 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-5">
-                                <!-- titulo -->
                                 <h3>Titulo</h3>
                             </div>
                             <div class="col-md-7">
@@ -40,7 +34,6 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-5">
-                                <!-- description -->
                                 <h3>Descripción</h3>
                             </div>
                             <div class="col-md-7">
@@ -54,8 +47,7 @@
                             <div class="carousel-inner">
                                 @foreach ($announcement->images as $image)
                                 <div class="carousel-item @if($loop->first)active @endif">
-                                    <img src="{{Storage::url($image->getUrl(300,150))}}" class=" d-block w-100"
-                                        alt="...">
+                                    <img src="{{Storage::url($image->file)}}" class=" d-block w-100" alt="...">
                                 </div>
                                 @endforeach
                             </div>
@@ -70,7 +62,6 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -93,7 +84,6 @@
         </div>
     </div>
 </div>
-
 @else
 <!-- no hay anuncios para revisar -->
 <div class="container my-5 py-5 head headline">

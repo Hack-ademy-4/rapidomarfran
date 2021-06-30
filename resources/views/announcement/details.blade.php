@@ -1,22 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-
-<!-- <div class="container my-5 py-5 head">
-    <div class="row h-100 align-items-center">
-        <div class="col-12 col-md-4">
-            <h3 class="display-3 fw-bolder title">Tu anuncio favorito: {{$announcement->name}}</h3>
-        </div>
-    </div>
-</div> -->
-<div class="container my-5 py-5">
+<div class="container my-5 py-5 title">
     <div class="row mt-3">
         <div class="col-12 text-center mt-3 title">
-            <h1 class="fw-bolder title">Detalles del anuncio.</h1>
+            <h1 class="fw-bolder title">Descubre mas sobre:{{$announcement->title}}</h1>
         </div>
     </div>
 </div>
-<div class="container my-3 py-3">
+<div class="container my-3 py-3 title">
     <div class="row h-100 align-items-center justify-content-center mx-5">
         <div class="col-12 col-md-6"> 
             
@@ -24,13 +16,13 @@
                 <div id="carouselExampleControls" class="carousel slide rounded shadow" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://picsum.photos/300/300" class="d-block w-100 rounded" alt="...">
+                            <img src="{{Storage::url($image->file)}}" class="d-block w-100 rounded" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://picsum.photos/300/300" class="d-block w-100 rounded" alt="...">
+                            <img src="{{Storage::url($image->file)}}" class="d-block w-100 rounded" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://picsum.photos/300/300" class="d-block w-100 ruonded" alt="...">
+                            <img src="{{Storage::url($image->file)}}" class="d-block w-100 ruonded" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -46,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 title">
 
         <h1 class="py-2">{{$announcement->title}}</h1>
 
@@ -75,7 +67,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container title">
     <div class="row pt-3">
         <div class="col-12 col-md-6">
             <h3>Informacion del vendedor</h3>
@@ -115,18 +107,5 @@
 
 </div>
 
-
-
-
 @endsection
-<!--  <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
-                <img src="https://picsum.photos/id/1/200/300" class="card-img-top" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{$announcement->title}}</h5>
-                    <p class="card-text">{{$announcement->price}}$</p>
-                    <p class="card-text">{{$announcement->body}}</p>
-                    <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
-                    <p class="card-text">{{$announcement->user->name}}</p>
-                </div>
 
-            </div> -->

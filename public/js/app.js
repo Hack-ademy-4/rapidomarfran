@@ -4942,20 +4942,13 @@ module.exports = {
 /*!********************************************!*\
   !*** ./resources/js/announcementImages.js ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
-/* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dropzone__WEBPACK_IMPORTED_MODULE_0__);
-
-(dropzone__WEBPACK_IMPORTED_MODULE_0___default().autoDiscover) = false;
+/***/ (() => {
 
 (function () {
   if (document.getElementById("drophere")) {
     var csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute('content');
     var uniqueSecret = document.querySelector("input[name='uniqueSecret']").getAttribute('value');
-    var myDropzone = new (dropzone__WEBPACK_IMPORTED_MODULE_0___default())('#drophere', {
+    var myDropzone = new Dropzone('#drophere', {
       url: '/announcement/images/upload',
       params: {
         _token: csrfToken,
@@ -5008,11 +5001,16 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
+/* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dropzone__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./myjs */ "./resources/js/myjs.js");
+
+(dropzone__WEBPACK_IMPORTED_MODULE_0___default().autoDiscover) = false;
 
 __webpack_require__(/*! ./announcementImages */ "./resources/js/announcementImages.js");
 
@@ -5053,34 +5051,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/myjs.js":
-/*!******************************!*\
-  !*** ./resources/js/myjs.js ***!
-  \******************************/
-/***/ (() => {
-
-/* logout */
-var logout = document.getElementById('logoutBtn');
-
-if (logout) {
-  logout.addEventListener('click', function (e) {
-    e.preventDefault();
-    var form = document.getElementById('logoutForm').submit();
-  });
-}
-/* scroll reveal */
-
-
-ScrollReveal().reveal('.headline', {
-  duration: 1500,
-  delay: 500,
-  distance: '80px',
-  interval: 600,
-  easing: 'cubic-bezier(0.5, 0, 0, 0.7)'
-});
 
 /***/ }),
 

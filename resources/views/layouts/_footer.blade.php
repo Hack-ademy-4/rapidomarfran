@@ -1,4 +1,4 @@
-<footer class="container-fluid px-md-5 py-5 bg-footer">
+<footer class="container-fluid px-md-5 pt-5 bg-footer">
   <div class="row">
     <div class="col-12">
       <svg id="logo-15" width="35" height="35" viewBox="0 0 49 48" fill="#5d0079" xmlns="http://www.w3.org/2000/svg">

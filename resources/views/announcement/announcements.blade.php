@@ -30,7 +30,7 @@
             </p>
             
             <div class="car-body d-flex">
-                <img src="https://picsum.photos/200/300" alt="">
+                <img src="{{Storage::url($image->file)}}" alt="">
                 <p>
                     {{$announcement->body}}
                 </p>

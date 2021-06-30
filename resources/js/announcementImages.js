@@ -1,8 +1,4 @@
 
-import Dropzone from "dropzone";
-Dropzone.autoDiscover = false;
-
-
 
 (function () {
     if (document.getElementById("drophere")) {
@@ -56,6 +52,3 @@ Dropzone.autoDiscover = false;
     })
 }
 })();
-
-        
-  

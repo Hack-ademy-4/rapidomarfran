@@ -23,10 +23,11 @@ class Announcement extends Model
       return $this->belongsTo(User::class);
    }
 
-   public function images()
-   {
+   
+  public function images()
+  {
       return $this->HasMany(AnnouncementImage::class);
-   }
+  }
 
 
    static public function ToBeRevisionedCount()

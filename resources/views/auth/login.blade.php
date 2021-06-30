@@ -76,7 +76,7 @@
                 <!--  <div class="sent-message text-center">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div> -->
             </div>
             <!-- entrar -->
-            <div class="text-center"><button class="btn btn-outline-violet" type="submit">Entrar</button></div>
+            <div class="text-center"><button class="btn buttonOverlay title" type="submit">Entrar</button></div>
         </form>
     </div>
 </div>

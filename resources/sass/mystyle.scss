@@ -56,8 +56,8 @@ body{
 
 .title {
     background: linear-gradient(to right, var(--main-color), var(--accent-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .cardLayout{
@@ -74,7 +74,7 @@ body{
 
 }
 
-.btn-outline-violet{
+/* .btn-outline-violet{
     border-color: var(--main-color);
     color: var(--main-color);
 
@@ -82,9 +82,53 @@ body{
 .btn-outline-violet:hover{
     background-color: var(--main-color);
     color:white;
+} */
 
-
-}
+/* button nico */
+.buttonOverlay {
+    padding: 12px 24px;
+    position: relative;
+    color: white;
+    border: none;
+  }
+  
+  .buttonOverlay span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .buttonOverlay::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 15px;
+    transition: transform .2s ease-in-out;
+  }
+  
+  .buttonOverlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--accent-color);
+    border-radius: 15px;
+    transition: transform .2s ease-in-out;
+  }
+  
+  .buttonOverlay:hover::before {
+    transform: translate(6px, -4px);
+  }
+  
+  .buttonOverlay:hover::after {
+    transform: translate(-6px, 4px);
+  }
 
 
 

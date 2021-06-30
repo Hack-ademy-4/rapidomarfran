@@ -17,11 +17,19 @@ use App\Http\Controllers\RevisorController;
 */
 
 
-Route::get('/', [App\Http\Controllers\HomeController::class,'index'])->name('home');
+
+//home
+//Route::get('/', [App\Http\Controllers\HomeController::class,'index'])->name('home');
 
 //nuevo anuncio
 Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
+
+//Recuperar las imágenes después del error de validación
+Route::get('/announcement/images', [HomeController::class,'getImages'])->name('announcement.images');
+
 Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
+
+
 
 //visualizacion anuncio de ususario no registrado
 Route::get('/', [PublicController::class,'index'])->name('home');
@@ -31,6 +39,14 @@ Route::get('/category/{name}/{id}/announcements', [PublicController::class,'anno
 
 //web detalle
 Route::get('/announcement/{id}', [HomeController::class,'details'])->name('announcement.details');
+
+//upload imagenes
+Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'])->name('announcement.images.upload');
+
+//delete imagenes
+Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
+
+
 
 //revisor
 Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
@@ -42,11 +58,5 @@ Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'rejec
 //banderas
 Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('locale');
 
-//upload imagenes
-Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'])->name('announcement.images.upload');
 
-//delete imagenes
-Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
 
-//Recuperar las imágenes después del error de validación
-Route::get('/announcement/images', [HomeController::class,'getImages'])->name('announcement.images');

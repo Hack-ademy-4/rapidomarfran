@@ -42,9 +42,9 @@ class HomeController extends Controller
 
     
     
+    
     public function createAnnouncement(AnnouncementRequest $request)
     {
-
         $a = new Announcement();
         $a->title = $request->input('title');
         $a->body = $request->input('body');
@@ -52,26 +52,21 @@ class HomeController extends Controller
         $a->category_id = $request->input('category');
         $a->user_id = Auth::id();
         $a->save();
-    
         $uniqueSecret = $request->input('uniqueSecret');
-        $images = session()->get("images.{$uniqueSecret}", []);
+        
+        $images = session()->get("images.{$uniqueSecret}",[]);
         $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
         $images = array_diff($images, $removedImages);
 
-        foreach($images as $image)
-        {
-
-            dispatch(new ResizeImage($newFilePath,300,150));
-
+        foreach($images as $image){
             $i = new AnnouncementImage;
             $fileName = basename($image);
             $newFilePath = "public/announcements/{$a->id}/{$fileName}";
             Storage::move($image,$newFilePath);
             $i->file = $newFilePath;
             $i->announcement_id = $a->id;
-            $i->save(); 
-        }  
-        
+            $i->save();
+        }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito, será revisado en la mayor brevedad posible');
     } 
@@ -84,22 +79,24 @@ class HomeController extends Controller
     }
 
 
+    
+    
     public function uploadImages(Request $request)
     {
 
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
-        dispatch(new ResizeImage($filePath,120,120));
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(
-            [
-                'id'=>$filePath
-            ]
-           /*  session()->get("images.{$uniqueSecret}") */
+            
+            ['id'=>$fileName]
             
         );
         
     }
+
+
+
 
     public function removeImages(Request $request)
     {       
@@ -109,6 +106,8 @@ class HomeController extends Controller
         Storage::delete($fileName);
         return response()->json('ok');
     }
+    
+
 
     public function getImages(Request $request)
     {       
@@ -124,8 +123,8 @@ class HomeController extends Controller
             
              $data[] = [
 
+                
                 'id' => $image,
-                'src' => AnnouncementImage::getUrlByFilePath($image,120,120),
                 'name' => basename($image),
                 'src' => Storage::url($image),
                 'size'=> Storage::size($image)

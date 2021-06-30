@@ -1,3 +1,4 @@
 require('./bootstrap');
-require('./myjs');
+import Dropzone from "dropzone";
+Dropzone.autoDiscover = false;
 require('./announcementImages');
