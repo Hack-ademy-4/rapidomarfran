@@ -39,7 +39,7 @@
                         <div>
                             <a class="text-decoration-none tx-w fw-bold h5"
                                 href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
-                                {{$category->name}}</a>
+                                {{__("ui.{$category->name}")}}</a>
                         </div>
                     </div>
                     @endforeach
