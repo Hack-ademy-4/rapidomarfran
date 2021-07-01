@@ -6,6 +6,7 @@ use Spatie\Image\Image;
 use Illuminate\Bus\Queueable;
 use Spatie\Image\Manipulations;
 use App\Models\AnnouncementImage;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
