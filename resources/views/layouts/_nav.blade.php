@@ -56,7 +56,7 @@
                 <li class="nav-item mx-3 dropdown">
                     <!-- idiomas -->
                     <a class="nav-link text-decoration-none tx-sec dropdown-toggle" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Idiomas</a>
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.lenguages')}}</a>
                     <ul class="dropdown-menu border-0 b-nav" aria-labelledby="navbarDropdown">
                         
 
