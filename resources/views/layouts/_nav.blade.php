@@ -45,7 +45,8 @@
                         <li class="">
                             <a class="dropdown-item text-center mb-3"
                                 href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
-                                {{$category->name}}
+                               <!--  {{$category->name}} -->
+                                {{__("ui.{$category->name}")}}
                             </a>
                         </li>
                         
