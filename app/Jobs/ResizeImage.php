@@ -11,9 +11,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 
+
+
 class ResizeImage implements ShouldQueue
 {
-    
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     private $path, $fileName, $w, $h;
 
@@ -34,7 +35,6 @@ class ResizeImage implements ShouldQueue
         Image::load($srcPath)
             ->crop(Manipulations::CROP_CENTER, $w, $h)
             ->save($destPath);
-
+    
     }
 }
-

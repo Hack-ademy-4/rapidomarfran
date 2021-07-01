@@ -43,6 +43,7 @@
                         </div>
                     </div>
                     @endforeach
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -63,11 +64,18 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
 
+
                             @foreach ($announcement->images as $image)
+                            <div class="carousel-item @if($loop->first)active @endif">
+                                <img src="{{$image->getUrl(300,150)}}" class="d-block w-100" alt="...">
+                            </div>
+                            @endforeach
+
+                            <!-- @foreach ($announcement->images as $image)
                             <div class="carousel-item @if($loop->first)active @endif">
                                 <img src="{{Storage::url($image->file)}}" class="d-block w-100" alt="...">
                             </div>
-                            @endforeach
+                            @endforeach -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                             data-bs-slide="prev">
@@ -87,10 +95,12 @@
                         <p class="card-text">Name seller:{{$announcement->user->name}}</p>
                         <p class="card-text">Date ad:{{$announcement->created_at->format('d/m/Y')}}</p>
                         <p class="card-text">{{__('ui.category')}}:
-                            <a href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
+                            <a
+                                href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
                             </a>
                         </p>
-                        <a href="{{route('announcement.details', ['id'=>$announcement->id])}}" class="btn btn-sm btn-outline-none title buttonOverlay">{{__('ui.read')}}
+                        <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
+                            class="btn btn-sm btn-outline-none title buttonOverlay">{{__('ui.read')}}
                         </a>
                     </div>
                 </div>
