@@ -10,20 +10,16 @@
 </div>
 <div class="container my-3 py-3 title">
     <div class="row h-100 align-items-center justify-content-center mx-5">
-        <div class="col-12 col-md-6"> 
-            
+        <div class="col-12 col-md-6">
+
             <div class="row mb-2">
-                <div id="carouselExampleControls" class="carousel slide rounded shadow" data-bs-ride="carousel">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://via.placeholder.com/150" class="d-block w-100 rounded" alt="...">
+                        @foreach ($announcement->images as $image)
+                        <div class="carousel-item @if($loop->first)active @endif">
+                            <img src="{{$image->getUrl(300,150)}}" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/150" class="d-block w-100 rounded" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://via.placeholder.com/150" class="d-block w-100 ruonded" alt="...">
-                        </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                         data-bs-slide="prev">
@@ -40,7 +36,7 @@
         </div>
         <div class="col-12 col-md-6 title">
 
-        <h1 class="py-2">{{$announcement->title}}</h1>
+            
 
             <div class="d-flex align-items-baseline">
                 <i class="far fa-calendar-alt fa-2x m-4"></i>
@@ -48,9 +44,7 @@
             </div>
             <h2>Descripción del producto.</h2>
             <p>{{$announcement->body}}</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi eveniet doloribus consequatur labor
-                delectus quod quo in reiciendis temporibus facere, cum ratione dolores repellendus
-                accusamus,necessitatibus nobis ad veniam nisi.</p>
+       
 
             <p><strong class="fs-3">Precio:</strong>{{$announcement->price}}€</p>
 
@@ -93,7 +87,7 @@
         </div>
 
         <div class="col-12 col-md-6">
-        <h3>Haz clic en el mapa para saber a que distancia está el producto de ti.</h3>
+            <h3>Haz clic en el mapa para saber a que distancia está el producto de ti.</h3>
 
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.206458211149!2d-0.3409446497170537!3d39.46466432081207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60496b30eda62b%3A0x1e472836dd1fa977!2sValenciaBonita%20House!5e0!3m2!1ses!2ses!4v1624976721970!5m2!1ses!2ses"
@@ -108,4 +102,3 @@
 </div>
 
 @endsection
-

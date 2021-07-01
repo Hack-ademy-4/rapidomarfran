@@ -59,23 +59,13 @@
             <div class="col-12 col-md-4 d-flex justify-content-center">
 
                 <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
-
-
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-
-
                             @foreach ($announcement->images as $image)
                             <div class="carousel-item @if($loop->first)active @endif">
                                 <img src="{{$image->getUrl(300,150)}}" class="d-block w-100" alt="...">
                             </div>
                             @endforeach
-
-                            <!-- @foreach ($announcement->images as $image)
-                            <div class="carousel-item @if($loop->first)active @endif">
-                                <img src="{{Storage::url($image->file)}}" class="d-block w-100" alt="...">
-                            </div>
-                            @endforeach -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                             data-bs-slide="prev">
@@ -143,11 +133,11 @@
         /* scroll reveal */
 
         ScrollReveal().reveal('.headline', {
-            duration: 1500,
-            delay: 500,
+            duration: 750,
+            delay: 400,
             distance: '80px',
             interval: 600,
-            easing: 'cubic-bezier(0.5, 0, 0, 1)'
+            easing: 'cubic-bezier(0.3, 0, 0, 0.5)'
         });
 
     </script>
