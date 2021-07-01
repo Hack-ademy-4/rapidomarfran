@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\HomeController;
+use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Jobs\GoogleVisionSafeLabelImage;
+
 use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
@@ -69,6 +72,10 @@ class HomeController extends Controller
             $i->file = $newFilePath;
             $i->announcement_id = $a->id;
             $i->save();
+
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionSafeLabelImage($i->id));
+        
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito, será revisado en la mayor brevedad posible');

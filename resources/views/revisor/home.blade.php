@@ -7,7 +7,7 @@
             <h1 class="display-3 fw-bolder title">Todos los artículos a la espera de ser revisados</h1>
             <p class="small mt-3 tx-muted">Empiece ahora con un simple clic</p>
         </div>
-        <div class="card">
+        <div class="card p-3 border-0 shadow">
             <div class="card-body">
                 <div class="row">
                     <div class="col-7">
@@ -40,56 +40,55 @@
                                 {{$announcement->body}}
                             </div>
                         </div>
-                        <hr>
+                        <div class="row my-3">
+                        <div class="col-12 text-center">
+                        <p class="title lead fw-bold">Revisa el anuncio aceptandolo o rechazandolo</p>
+                        </div>
+                            <div class="col-12 d-flex justify-content-around ">
+                                <div>
+                                    <form action="{{route('revisor.announcement.accept',['id'=>$announcement->id])}}"
+                                        method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-success">Aceptar</button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <form action="{{route('revisor.announcement.reject',['id'=>$announcement->id])}}"
+                                        method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Rechazar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-5">
+                        <div class="row">
 
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                @foreach ($announcement->images as $image)
-                                <div class="carousel-item @if($loop->first)active @endif">
-                                    <img src="{{$image->getUrl(300,150)}}" class="d-block w-100" alt="...">
-                                </div>
-                                @endforeach
-
-                                <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                @foreach ($announcement->images as $image)
-                                <div class="carousel-item @if($loop->first)active @endif">
-                                    <img src="{{Storage::url($image->file)}}" class=" d-block w-100" alt="...">
-                                </div>
-                                @endforeach -->
-
-                            
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            @foreach ($announcement->images as $image)
+                            <div class="col-12 mb-3">
+                                <img src="{{$image->getUrl(300,150)}}" class="d-block mx-auto shadow mb-2" alt="...">
+                                <p class="title lead fw-bold mb-2">Google Safe Search API Response</p>
+                                <ul class="list-unstyled mb-2">
+                                    <li class="mb-2"> Adult: {{$image->adult }}</li>
+                                    <li class="mb-2"> spoof: {{$image->spoof }}</li>
+                                    <li class="mb-2"> medical: {{$image->medical }}</li>
+                                    <li class="mb-2"> violence: {{$image->violence }}</li>
+                                    <li class="mb-2"> racy: {{$image->racy }}</li>
+                                    <li class="mb-2">{{$image->id }}</li>
+                                </ul>
+                                <ul>
+                                    @if($image->labels)
+                                    @foreach($image->labels as $label)
+                                    <li>{{$label}}</li>
+                                    @endforeach
+                                    @endif
+                                </ul>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-6">
-                <form action="{{route('revisor.announcement.accept',['id'=>$announcement->id])}}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-success">Aceptar</button>
-                </form>
-            </div>
-            <div class="col-12 col-md-6">
-                <form action="{{route('revisor.announcement.reject',['id'=>$announcement->id])}}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger">Rechazar</button>
-                </form>
             </div>
         </div>
     </div>

@@ -91,7 +91,7 @@
 
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.206458211149!2d-0.3409446497170537!3d39.46466432081207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60496b30eda62b%3A0x1e472836dd1fa977!2sValenciaBonita%20House!5e0!3m2!1ses!2ses!4v1624976721970!5m2!1ses!2ses"
-                width="600" height="300" style="border:rounded;" allowfullscreen="" loading="lazy">
+                width="300" height="300" style="border:rounded;" allowfullscreen="" loading="lazy">
             </iframe>
         </div>
     </div>
