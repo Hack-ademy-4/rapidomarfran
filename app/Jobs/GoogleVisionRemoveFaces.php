@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use Spatie\Image\Image;
 use Illuminate\Bus\Queueable;
+use Spatie\Image\Manipulations;
 use App\Models\AnnouncementImage;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -14,17 +15,14 @@ use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionRemoveFaces implements ShouldQueue
 {
-
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     private $announcement_image_id;
-    
-     
+ 
     public function __construct($announcement_image_id)
     {
         $this->announcement_image_id=$announcement_image_id;
     }
-    
-   
+     
 public function handle()
 {
     $i = AnnouncementImage::findOrFail($this->announcement_image_id);
@@ -61,4 +59,7 @@ public function handle()
         $image->save($srcPath);
     }
 }
+    
+
 }
+

@@ -9,15 +9,17 @@ use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\HomeController;
-use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Jobs\GoogleVisionSafeLabelImage;
-
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
+use App\Jobs\GoogleVisionLabelImage;
 
 class HomeController extends Controller
 {   
@@ -67,16 +69,22 @@ class HomeController extends Controller
             $newFilePath = "public/announcements/{$a->id}/{$fileName}";
             Storage::move($image,$newFilePath);
 
-            dispatch(new ResizeImage($newFilePath,300,150));
+           
 
             $i->file = $newFilePath;
             $i->announcement_id = $a->id;
             $i->save();
 
-            dispatch(new GoogleVisionSafeSearchImage($i->id));
-            dispatch(new GoogleVisionSafeLabelImage($i->id));
-        
+            
+        Bus::chain([
+            new GoogleVisionSafeSearchImage($i->id),
+            new GoogleVisionLabelImage($i->id),
+            new GoogleVisionRemoveFaces($i->id),
+            new ResizeImage($i->file, 300,150)
+        ])->dispatch();
+           
         }
+
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito, será revisado en la mayor brevedad posible');
     } 
@@ -99,7 +107,7 @@ class HomeController extends Controller
 
     $uniqueSecret = $request->input('uniqueSecret');
     $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");
-    dispatch(new ResizeImage($filePath,120,120));
+    (new ResizeImage($filePath,120,120));
     session()->push("images.{$uniqueSecret}", $filePath);
     return response()->json(
         [
