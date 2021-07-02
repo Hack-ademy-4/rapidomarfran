@@ -58,7 +58,7 @@
             @foreach($announcements as $announcement)
             <div class="col-12 col-md-4 d-flex justify-content-center">
 
-                <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
+                <div class="card shadow text-center cardLayout my-5" style=" width: 18rem;">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($announcement->images as $image)
@@ -79,14 +79,16 @@
                         </button>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Title:{{$announcement->title}}</h5>
-                        <p class="card-text">Price:{{$announcement->price}}$</p>
-                        <p class="card-text">Description:{{$announcement->body}}</p>
-                        <p class="card-text">Name seller:{{$announcement->user->name}}</p>
-                        <p class="card-text">Date ad:{{$announcement->created_at->format('d/m/Y')}}</p>
-                        <p class="card-text">{{__('ui.category')}}:
-                            <a
-                                href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
+                        <ul class="list-unstyled mb-2">
+                                    <li class="mb-2 title">{{__('ui.title')}}:</li><p class="text-dark">{{$announcement->title}}</p>
+                                    <li class="mb-2 title ">{{__('ui.price')}}:</li><p class="text-dark">{{$announcement->price}}$</p>
+                                    <li class="mb-2 title">{{__('ui.description')}}:</li><p class="text-dark">{{$announcement->body}}</p>
+                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li><p class="text-dark">{{$announcement->user->name}}</p>
+                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li><p class="text-dark">{{$announcement->created_at->format('d/m/Y')}}</p>
+                                    <li class="mb-2 title">{{__('ui.category')}}:</li>
+                                </ul>
+                            <a class="text-decoration-none"
+                                href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}} 
                             </a>
                         </p>
                         <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"

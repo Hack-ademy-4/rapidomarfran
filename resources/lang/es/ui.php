@@ -4,7 +4,7 @@ return [
     'welcome'=>'Bienvenidos a Rapido',
     'read'=>'Leer mas',
     'newAdd'=>'Nuevo anuncio',
-    'category'=>'Categoria',
+    'category'=>'Categorias',
     'lenguages'=>'Idiomas',
     'logout'=>'Salir',
     'login'=>'Inicia session',
@@ -25,6 +25,11 @@ return [
     'imobiles'=>'Inmobiliaria',
     'moviles'=>'Moviles',
     'mobiliario'=>'Mobiliario',
+    'title'=>'Titulo anuncio',
+    'price'=>'Precio',
+    'description'=>'Description',
+    'nameSeller'=>'Vendedor',
+    'dateAd'=>'Data',
     
     
     

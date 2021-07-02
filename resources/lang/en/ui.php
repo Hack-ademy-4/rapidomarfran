@@ -23,9 +23,12 @@ return [
     'deporte'=>'Sports',
     'imobiles'=>'Real estate',
     'moviles'=>'Phones',
-    'mobiliario'=>'Fornitures',
+    'title'=>'Title ad',
+    'price'=>'Price',
+    'description'=>'Product description',
+    'nameSeller'=>'Seller name',
+    'dateAd'=>'Date at',
     
-
     
 
     

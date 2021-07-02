@@ -25,4 +25,9 @@ return [
     'imobiles'=>'Immobiliaria',
     'moviles'=>'Telefoni',
     'mobiliario'=>'Mobili',
+    'title'=>'Titolo annuncio',
+    'price'=>'Prezo',
+    'description'=>'Descrizione del prodotto',
+    'nameSeller'=>'Venduto da',
+    'dateAd'=>'Pubblicato il',
 ];
