@@ -1,7 +1,7 @@
 
 <?php
 return [
-    'welcome'=>'Bienvenidos a Rapido',
+    'welcome'=>'Rapido',
     'read'=>'Leer mas',
     'newAdd'=>'Nuevo anuncio',
     'category'=>'Categorias',
@@ -10,7 +10,7 @@ return [
     'login'=>'Inicia session',
     'register'=>'Registrate',
     'revisor'=>'Revisar anuncio',
-    'slogan'=>'La plataforma líder de compraventa de productos de segunda mano.',
+    'slogan'=>'Bienvenidos a la plataforma líder de compraventa de productos de segunda mano.',
     'textSearch'=>'¿En que categoria estas buscando?',
     'products'=>'Los productos de segunda mano añadidos recientemente, slice up 👉🏻',
     'contact'=>'Contactanos',
@@ -30,6 +30,7 @@ return [
     'description'=>'Description',
     'nameSeller'=>'Vendedor',
     'dateAd'=>'Data',
+    'search'=>'Qué estas buscando?¿',
     
     
     

@@ -1,7 +1,7 @@
 
 <?php
 return [
-    'welcome'=>'Welcome to Rapido',
+    'welcome'=>'Rapido',
     'read'=>'Read more',
     'newAdd'=>'New Ad',
     'category'=>'Category',
@@ -10,7 +10,7 @@ return [
     'login'=>'Login',
     'register'=>'Register',
     'revisor'=>'Review ad',
-    'slogan'=>'The best website for second-hand stuff',
+    'slogan'=>' Welcome to the best website for second-hand stuff',
     'textSearch'=>'¿What are you looking for?',
     'products'=>'The lastest ads',
     'contact'=>'Contact',
@@ -28,6 +28,8 @@ return [
     'description'=>'Product description',
     'nameSeller'=>'Seller name',
     'dateAd'=>'Date at',
+    'search'=>'What are you looking for?¿',
+
     
     
 

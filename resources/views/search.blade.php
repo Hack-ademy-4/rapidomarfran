@@ -41,12 +41,12 @@
                         <p class="text-dark fw-bold">{{$announcement->user->name}}</p>
                         <li class="mb-2 title">{{__('ui.dateAd')}}:</li>
                         <p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
-                        <li class="mb-2 title">{{__('ui.category')}}:</li>
+                        <!-- <li class="mb-2 title">{{__('ui.category')}}:</li> -->
                     </ul>
-                    <a class="text-decoration-none"
+                   <!--  <a class="text-decoration-none"
                         href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}}
                     </a>
-                    </p>
+                    </p> -->
                     <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
                         class="btn btn-sm btn-outline-none title buttonOverlay">{{__('ui.read')}}
                     </a>

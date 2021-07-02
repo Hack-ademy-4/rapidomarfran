@@ -19,12 +19,11 @@
         </svg>
         <a class="navbar-brand nav-b text-decoration-none tx-main mx-0 mx-md-2" href="{{ route('home') }}">Rapido</a>
         
-        <!-- <button class="navbar-toggler border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+       <!--  <button class="navbar-toggler border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button> -->
+        </button>  -->
         
-
         {{-- <div class="d-flex">
             @include('layouts._locale',["lang"=>'es','nation'=>'es'])
             @include('layouts._locale',["lang"=>'en','nation'=>'gb'])
@@ -109,7 +108,7 @@
             @if (Auth::user()->is_revisor)
 
             
-            <span class="btn btn-danger mx-3">
+            <span class="btn btn-info mx-3">
                 <a class="mx-3 text-decoration-none tx-w" href="{{ route('revisor.home') }}">{{__('ui.revisor')}}
 
                         {{\App\Models\Announcement::ToBeRevisionedCount() }}

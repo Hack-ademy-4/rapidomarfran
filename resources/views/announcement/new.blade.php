@@ -15,11 +15,10 @@
                         <form method="POST" action='{{route("announcement.create")}}'>
                             @csrf
 
-                            <div class="card-header title">
+                              <div class="card-header title d-none ">
                                 Nuevo anuncio (Secret: {{$uniqueSecret}})
-                            </div>
-
-                            <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+                            </div> 
+                            <input class="d-none" type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                             <!-- categorias -->
                             <div class="form-group py-3">
                                 <label class="title fw-bold mb-2" for="categories">Categorias</label>
@@ -37,7 +36,7 @@
 
 
                             <div class="mb-3">
-                                <label for="announcementImages" class="form-label">Imagenes</label>
+                                <label for="announcementImages" class="form-label title  ">Imagenes</label>
                                 <div class="dropzone" id="drophere"></div>
                                 @error('images')
                                 <small class="alert alert-danger">{{ $message }}</small>

@@ -1,7 +1,7 @@
 
 <?php
 return [
-    'welcome'=>'Benvenuti in Rapido',
+    'welcome'=>'Rapido',
     'read'=>'Per saperne di piu',
     'newAdd'=>'Nuovo annuncio',
     'category'=>'Categorie',
@@ -10,7 +10,7 @@ return [
     'login'=>'Entra',
     'register'=>'Registrati',
     'revisor'=>'Anunnci da revisionare',
-    'slogan'=>'La miglior piattaforma per i prodotti di seconda mano',
+    'slogan'=>'Benvenuti a la miglior piattaforma per i prodotti di seconda mano',
     'textSearch'=>'¿Che cosa stai cercando?',
     'products'=>'Gli ultimi annunci della giornata',
     'contact'=>'Contatti',
@@ -30,4 +30,5 @@ return [
     'description'=>'Descrizione del prodotto',
     'nameSeller'=>'Venduto da',
     'dateAd'=>'Pubblicato il',
+    'search'=>'Cerca quello che vuoi?¿',
 ];
