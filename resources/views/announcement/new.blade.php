@@ -26,7 +26,7 @@
                                 <select class="form-control mb-2" id="categories" name="category">
                                     @foreach($categories as $category)
                                     <option value="{{$category->id}}"
-                                        {{old('category') == $category->id ? 'selected' : ''}}>{{$category->name}}
+                                        {{old('category') == $category->id ? 'selected' : ''}}>{{__("ui.{$category->name}")}}
                                     </option>
                                     @endforeach
                                 </select>
