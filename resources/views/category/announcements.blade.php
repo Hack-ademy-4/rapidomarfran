@@ -1,17 +1,18 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container my-5 py-5 title">
+<!-- <div class="container my-5 py-5 title">
     <div class="row">
         <div class="col-12 text-center">
             <h2 class="tx-main">Descubre mas sobre los ultimos anuncios</h2>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row title">
+</div> -->
+<div class="container my-5 py-5">
+    <div class="row">
         <div class='col-12 text-center'>
-            <h1>Tus categoria favoritas: {{$category->name}}</h1>
+            <h1 class="title">Tus categoria favoritas:</h1> 
+            <h3 class="text-dark">{{__("ui.{$category->name}")}}</h3>
         </div>
     </div>
     @foreach($announcements as $announcement)
@@ -37,13 +38,18 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                <div class="card-footer text-capitalize d-flex justify-content-between">
+                <div class="card-footer text-capitalize ">
                 <ul class="list-unstyled mb-2">
-                                    <li class="mb-2 title">{{__('ui.title')}}:</li><p class="text-dark fw-bold">{{$announcement->title}}</p>
-                                    <li class="mb-2 title ">{{__('ui.price')}}:</li><p class="text-dark fw-bold">{{$announcement->price}}€</p>
-                                    <li class="mb-2 title">{{__('ui.description')}}:</li><p class="text-dark fw-bold">{{$announcement->body}}</p>
-                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li><p class="text-dark fw-bold">{{$announcement->user->name}}</p>
-                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li><p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
+                                    <li class="mb-2 title">{{__('ui.title')}}:</li>
+                                    <p class="text-dark fw-bold">{{$announcement->title}}</p>
+                                    <li class="mb-2 title ">{{__('ui.price')}}:</li>
+                                    <p class="text-dark fw-bold">{{$announcement->price}}€</p>
+                                    <li class="mb-2 title">{{__('ui.description')}}:</li>
+                                    <p class="text-dark fw-bold">{{$announcement->body}}</p>
+                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li>
+                                    <p class="text-dark fw-bold">{{$announcement->user->name}}</p>
+                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li>
+                                    <p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
                 </ul>
                     <!-- <p>{{$announcement->body}}</p>
                     <i class="text-capitalize">{{$announcement->created_at->format('d/m/Y')}} -
