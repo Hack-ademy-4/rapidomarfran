@@ -47,7 +47,6 @@ Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'
 Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
 
 
-
 //revisor
 Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
 
@@ -58,5 +57,6 @@ Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'rejec
 //banderas
 Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('locale');
 
-
+//search
+Route::get('/search', [PublicController::class,'search'])->name('search');
 

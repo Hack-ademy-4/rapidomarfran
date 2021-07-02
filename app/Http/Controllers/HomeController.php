@@ -105,15 +105,15 @@ class HomeController extends Controller
     public function uploadImages(Request $request)
     {
 
-    $uniqueSecret = $request->input('uniqueSecret');
-    $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");
-    (new ResizeImage($filePath,120,120));
-    session()->push("images.{$uniqueSecret}", $filePath);
-    return response()->json(
-        [
-        'id' => $filePath
-        ]
-        );
+        $uniqueSecret = $request->input('uniqueSecret');
+        $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");
+        (new ResizeImage($filePath,120,120));
+        session()->push("images.{$uniqueSecret}", $filePath);
+        return response()->json(
+            [
+            'id' => $filePath
+            ]
+            );
     }
 
 

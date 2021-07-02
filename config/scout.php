@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    'driver' => env('SCOUT_DRIVER', 'tntsearch'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'queue' => env('SCOUT_QUEUE', false),
+    'queue' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -134,4 +134,18 @@ return [
         'key' => env('MEILISEARCH_KEY', null),
     ],
 
+
+
+    
+    'tntsearch' => [
+        'storage'  => storage_path(), //place where the index files will be stored
+        'fuzziness' => true,
+        'fuzzy' => [
+            'prefix_length' => 3,
+            'max_expansions' => 50,
+            'distance' => 3
+        ],
+        'asYouType' => false,
+        'searchBoolean' => true,
+    ],
 ];

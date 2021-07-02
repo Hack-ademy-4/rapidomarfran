@@ -1,14 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container my-5 py-5 title">
+<div class="container my-5 py-5">
     <div class="row mt-3">
-        <div class="col-12 text-center mt-3 title">
-            <h1 class="fw-bolder title">Descubre mas sobre:{{$announcement->title}}</h1>
+        <div class="col-12 text-center mt-3">
+            <h1 class="fw-bolder title">Descubre mas sobre:</h1>
+            <h2>{{$announcement->title}}</h2>
         </div>
     </div>
 </div>
-<div class="container my-3 py-3 title">
+<div class="container my-3 py-3">
     <div class="row h-100 align-items-center justify-content-center mx-5">
         <div class="col-12 col-md-6">
 
@@ -34,59 +35,52 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 title">
-
-            
-
+        <div class="col-12 col-md-6">
+            <h2 class="title">Descripción del producto.</h2>
+            <p>{{$announcement->body}}</p>
+            <spam><strong class="fs-3 title">Precio:</spam></strong>{{$announcement->price}}€
             <div class="d-flex align-items-baseline">
-                <i class="far fa-calendar-alt fa-2x m-4"></i>
+                <i class="far fa-calendar-alt fa-2x m-4 title"></i>
                 <p>Fecha de publicación: {{$announcement->created_at->format('d/m/Y')}}</p>
             </div>
-            <h2>Descripción del producto.</h2>
-            <p>{{$announcement->body}}</p>
-       
-
-            <p><strong class="fs-3">Precio:</strong>{{$announcement->price}}€</p>
-
-            <p>Metodos de pago:</p>
-            <i class="fab fa-cc-mastercard fa-2x m-4"></i>
-            <i class="fab fa-cc-visa fa-2x m-4"></i>
-            <i class="fab fa-cc-stripe fa-2x m-4"></i>
-            <i class="fab fa-cc-paypal fa-2x m-4"></i>
+            <i class="fab fa-cc-mastercard fa-2x m-4 title"></i>
+            <i class="fab fa-cc-visa fa-2x m-4 title"></i>
+            <i class="fab fa-cc-stripe fa-2x m-4 title"></i>
+            <i class="fab fa-cc-paypal fa-2x m-4 title"></i>
 
             <div class="d-flex align-items-baseline">
-                <i class="fas fa-truck fa-2x m-4"></i>
-                <p>Envio gratuito a partir de 50€ de compra.</p>
+                <i class="fas fa-truck fa-2x m-4 title"></i>
+                <spam>Envio gratuito a partir de 50€ de compra.</spam>
             </div>
         </div>
     </div>
 </div>
-<div class="container title">
+<div class="container">
     <div class="row pt-3">
         <div class="col-12 col-md-6">
-            <h3>Informacion del vendedor</h3>
+            <h3 class="title">Informacion del vendedor</h3>
             <div class="d-flex align-items-baseline">
-                <i class="fas fa-user fa-2x m-4 navIcon"></i>
+                <i class="fas fa-user fa-2x m-4 navIcon title"></i>
                 <p>Persona de contacto: {{$announcement->user->name}}</p>
             </div>
 
             <div class="d-flex align-items-baseline">
-                <i class="fab fa-whatsapp fa-2x m-4"></i>
+                <i class="fab fa-whatsapp fa-2x m-4 title"></i>
                 <p>612345678</p>
             </div>
             <div class="d-flex align-items-baseline">
-                <i class="fas fa-at fa-2x m-4 navIcon"></i>
+                <i class="fas fa-at fa-2x m-4 navIcon title"></i>
                 <p>{{$announcement->user->email}}</p>
             </div>
 
             <div class="d-flex align-items-baseline">
-                <i class="fas fa-map-marker-alt fa-2x m-4 navIcon"></i>
+                <i class="fas fa-map-marker-alt fa-2x m-4 navIcon title"></i>
                 <p>Valencia</p>
 
             </div>
         </div>
 
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 title">
             <h3>Haz clic en el mapa para saber a que distancia está el producto de ti.</h3>
 
             <iframe
@@ -100,5 +94,26 @@
 </div>
 
 </div>
+
+@push('scripts')
+
+<script>
+   
+
+    /* log out */
+
+
+    const logout = document.getElementById('logoutBtn');
+    if (logout) {
+        logout.addEventListener('click', (e) => {
+            e.preventDefault();
+            const form = document.getElementById('logoutForm').submit();
+        });
+    }
+
+
+
+</script>
+@endpush
 
 @endsection

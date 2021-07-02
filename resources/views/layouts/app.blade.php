@@ -35,7 +35,8 @@
         @include('layouts._footer')
     </div>
 
-   
+   <!-- Lord Icon -->
+   <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
     <!--Scroll reveal cdn-->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Scripts fontawasome -->

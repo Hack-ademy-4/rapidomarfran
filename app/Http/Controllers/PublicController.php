@@ -45,5 +45,13 @@ class PublicController extends Controller
     }
 
 
+    public function search(Request $request)
+    {
+        $q = $request->input('q');
+        $announcements = Announcement::search($q)
+            ->where('is_accepted', true)
+            ->get();
+        return view('search', compact('q', 'announcements'));
+    }  
 }   
    

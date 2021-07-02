@@ -15,18 +15,17 @@
                         <form method="POST" action='{{route("announcement.create")}}'>
                             @csrf
 
-                            <div class="card-header title">
+                              <div class="card-header title d-none ">
                                 Nuevo anuncio (Secret: {{$uniqueSecret}})
-                            </div>
-
-                            <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+                            </div> 
+                            <input class="d-none" type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                             <!-- categorias -->
                             <div class="form-group py-3">
                                 <label class="title fw-bold mb-2" for="categories">Categorias</label>
                                 <select class="form-control mb-2" id="categories" name="category">
                                     @foreach($categories as $category)
                                     <option value="{{$category->id}}"
-                                        {{old('category') == $category->id ? 'selected' : ''}}>{{$category->name}}
+                                        {{old('category') == $category->id ? 'selected' : ''}}>{{__("ui.{$category->name}")}}
                                     </option>
                                     @endforeach
                                 </select>
@@ -37,7 +36,7 @@
 
 
                             <div class="mb-3">
-                                <label for="announcementImages" class="form-label">Imagenes</label>
+                                <label for="announcementImages" class="form-label title  ">Imagenes</label>
                                 <div class="dropzone" id="drophere"></div>
                                 @error('images')
                                 <small class="alert alert-danger">{{ $message }}</small>
@@ -86,4 +85,48 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+
+    <script>
+        /*  Initialize Swiper  */
+
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cube",
+            grabCursor: true,
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+
+        /* log out */
+
+
+        const logout = document.getElementById('logoutBtn');
+        if (logout) {
+            logout.addEventListener('click', (e) => {
+                e.preventDefault();
+                const form = document.getElementById('logoutForm').submit();
+            });
+        }
+
+        /* scroll reveal */
+
+        ScrollReveal().reveal('.headline', {
+            duration: 750,
+            delay: 400,
+            distance: '80px',
+            interval: 600,
+            easing: 'cubic-bezier(0.3, 0, 0, 0.5)'
+        });
+
+    </script>
+    @endpush
+
 @endsection

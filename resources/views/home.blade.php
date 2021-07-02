@@ -10,6 +10,17 @@
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
             <p class="small mt-5 tx-muted">{{__('ui.slogan')}}</p>
+            <div class=" d-flex align-item">
+
+                <div class="row align-items-center headline">
+                    <h5 class=" title mt-5 pt-5">{{__('ui.search')}}</h5>
+                    <form action="{{ route('search') }}" method="GET">
+                        <input class="b-search border border-warning" type="text" name="q" placeholder="">
+                        <button class="btn btn-sm btn-outline-none title buttonOverlay m-3 headline"
+                            type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -23,7 +34,45 @@
         </div>
     </div>
 </div>
+<!-- <div class="container my-5 py-5 headline">
+    <div class="row text-center tx-sec my-5 py-5">
+        <h2>Porque elejir rapido</h2>
+        <div class="col-12 d-flex justify-content-center ">
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row justify-content-around text-center">
+        <h2 class="title my-5 py-5">Porque elejir Rapido</h2>
+        <div class="col-12 col-md-3 text-center mb-3">
 
+            <div>
+                <lord-icon src="https://cdn.lordicon.com//dnoiydox.json" trigger="loop"
+                    colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
+                </lord-icon>
+                <h4 class="tx-sec">Encontras todo lo que quiera comprar</h4>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 text-center mb-3">
+            <div>
+                <lord-icon src="https://cdn.lordicon.com//gqzfzudq.json" trigger="loop"
+                    colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
+                </lord-icon>
+                <h4 class="tx-sec">Echo da españoles y traducido en diferentes idiomas</h4>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3 text-center mb-3">
+            <div>
+                <lord-icon src="https://cdn.lordicon.com//zpxybbhl.json" trigger="loop"
+                    colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
+                </lord-icon>
+                <h4 class="tx-sec">Mujeres y hombres hablan sobre nosotros</h4>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container mt-5 pt-5 headline">
     <div class="row align-items-center">
         <div class="col-12 col-md-6">
@@ -39,7 +88,7 @@
                         <div>
                             <a class="text-decoration-none tx-w fw-bold h5"
                                 href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
-                                {{$category->name}}</a>
+                                {{__("ui.{$category->name}")}}</a>
                         </div>
                     </div>
                     @endforeach
@@ -56,9 +105,9 @@
                 <h2 class="tx-main mt-5 pt-5">Descubre mas sobre los ultimos anuncios</h2>
             </div>
             @foreach($announcements as $announcement)
-            <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="col-12 col-md-3 d-flex justify-content-center">
 
-                <div class="card shadow title text-center cardLayout my-5" style=" width: 18rem;">
+                <div class="card shadow text-center cardLayout my-5 rounded-0">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($announcement->images as $image)
@@ -79,19 +128,26 @@
                         </button>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Title:{{$announcement->title}}</h5>
-                        <p class="card-text">Price:{{$announcement->price}}$</p>
-                        <p class="card-text">Description:{{$announcement->body}}</p>
-                        <p class="card-text">Name seller:{{$announcement->user->name}}</p>
-                        <p class="card-text">Date ad:{{$announcement->created_at->format('d/m/Y')}}</p>
-                        <p class="card-text">{{__('ui.category')}}:
-                            <a
-                                href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}
+                        <!-- <ul class="list-unstyled mb-2">
+                                    <li class="mb-2 title">{{__('ui.title')}}:</li><p class="text-dark fw-bold">{{$announcement->title}}</p>
+                                    <li class="mb-2 title ">{{__('ui.price')}}:</li><p class="text-dark fw-bold">{{$announcement->price}}€</p>
+                                    <li class="mb-2 title">{{__('ui.description')}}:</li><p class="text-dark fw-bold">{{$announcement->body}}</p>
+                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li><p class="text-dark fw-bold">{{$announcement->user->name}}</p>
+                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li><p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
+                        </ul> -->
+                        <div class="card-title title fw-bold">{{__('ui.title')}}:</div>
+                        <span>{{$announcement->title}}</span>
+                        <div class="card-subtitle title fw-bold">{{__('ui.price')}}:</div>
+                        <span>{{$announcement->price}}€</span>
+                        <p class=" title fw-bold">{{__('ui.description')}}:</p><span>{{$announcement->body}}</span>
+                        <p class=" title fw-bold">{{__('ui.nameSeller')}}:</p><span>{{$announcement->user->name}}</span>
+                        <div class="card-subtitle title fw-bold">{{__('ui.dateAd')}}:</div>
+                        <span>{{$announcement->created_at->format('d/m/Y')}}</span>
+                        <div>
+                            <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
+                                class="btn btn-sm btn-outline-none title buttonOverlay mt-3">{{__('ui.read')}}
                             </a>
-                        </p>
-                        <a href="{{route('announcement.details', ['id'=>$announcement->id])}}"
-                            class="btn btn-sm btn-outline-none title buttonOverlay">{{__('ui.read')}}
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

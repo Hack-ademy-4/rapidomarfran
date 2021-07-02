@@ -1,7 +1,7 @@
 
 <?php
 return [
-    'welcome'=>'Welcome to Rapido',
+    'welcome'=>'Rapido',
     'read'=>'Read more',
     'newAdd'=>'New Ad',
     'category'=>'Category',
@@ -10,22 +10,27 @@ return [
     'login'=>'Login',
     'register'=>'Register',
     'revisor'=>'Review ad',
-    'slogan'=>'The best website for second-hand stuff',
+    'slogan'=>' Welcome to the best website for second-hand stuff',
     'textSearch'=>'¿What are you looking for?',
     'products'=>'The lastest ads',
     'contact'=>'Contact',
     'info'=>'Business info',
-    'motorbike'=>'Motorbikes',
-    'car'=>'Cars',
-    'homeSupply'=>'Home supplies',
-    'book'=>'Books',
-    'videoGame'=>'Video Games',
-    'sport'=>'Sports',
-    'realEstate'=>'Real estate',
-    'phone'=>'Phones',
-    'forniture'=>'Fornitures',
-    
+    'motores'=>'Motorbikes',
+    'auto'=>'Cars',
+    'electrodomésticos'=>'Home supplies',
+    'libros'=>'Books',
+    'juegos'=>'Video Games',
+    'deporte'=>'Sports',
+    'imobiles'=>'Real estate',
+    'moviles'=>'Phones',
+    'title'=>'Title ad',
+    'price'=>'Price',
+    'description'=>'Product description',
+    'nameSeller'=>'Seller name',
+    'dateAd'=>'Date at',
+    'search'=>'What are you looking for?¿',
 
+    
     
 
     
