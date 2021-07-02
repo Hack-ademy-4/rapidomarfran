@@ -64,7 +64,6 @@
                     </div>
                     <div class="col-5">
                         <div class="row">
-
                             @foreach ($announcement->images as $image)
                             <div class="col-12 mb-3">
                                 <img src="{{$image->getUrl(300,150)}}" class="d-block mx-auto shadow mb-2" alt="...">
