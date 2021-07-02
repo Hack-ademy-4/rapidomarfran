@@ -17,7 +17,7 @@
     @foreach($announcements as $announcement)
     <div class="row my-3">
         <div class="col-12 col-md-8 offset-md-2">
-            <div class="card shadow p-3 mb-5 bg-body title text-center cardLayout my-5">
+            <div class="card shadow p-3 mb-5 bg-body text-center cardLayout my-5">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @foreach ($announcement->images as $image)
@@ -38,9 +38,17 @@
                     </button>
                 </div>
                 <div class="card-footer text-capitalize d-flex justify-content-between">
-                    <p>{{$announcement->body}}</p>
+                <ul class="list-unstyled mb-2">
+                                    <li class="mb-2 title">{{__('ui.title')}}:</li><p class="text-dark fw-bold">{{$announcement->title}}</p>
+                                    <li class="mb-2 title ">{{__('ui.price')}}:</li><p class="text-dark fw-bold">{{$announcement->price}}€</p>
+                                    <li class="mb-2 title">{{__('ui.description')}}:</li><p class="text-dark fw-bold">{{$announcement->body}}</p>
+                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li><p class="text-dark fw-bold">{{$announcement->user->name}}</p>
+                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li><p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
+                </ul>
+                    <!-- <p>{{$announcement->body}}</p>
                     <i class="text-capitalize">{{$announcement->created_at->format('d/m/Y')}} -
-                        {{$announcement->user->name}}</i>
+                        {{$announcement->user->name}}</i> -->
+                      
                 </div>
             </div>
         </div>

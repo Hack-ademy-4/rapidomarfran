@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg p-4 mb-2 shadow-sm fixed-top b-nav">
 
     <div class="container-fluid d-flex align-items-center">
+    
 
         <svg id="logo-15" width="35" height="35" viewBox="0 0 49 48" fill="#5d0079" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -17,10 +18,13 @@
                 class="ccustom" fill="#5d0079"></path>
         </svg>
         <a class="navbar-brand nav-b text-decoration-none tx-main mx-0 mx-md-2" href="{{ route('home') }}">Rapido</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        
+        <!-- <button class="navbar-toggler border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
+        
+
         {{-- <div class="d-flex">
             @include('layouts._locale',["lang"=>'es','nation'=>'es'])
             @include('layouts._locale',["lang"=>'en','nation'=>'gb'])
@@ -79,9 +83,8 @@
                     </ul>
                 </li>   
             </ul>
-
-
-    
+           
+            
             <!-- acaba bandera -->
 
             @guest
@@ -118,7 +121,7 @@
             @endif
             <!-- acaba revisor -->
             @endguest
-
+            
         </div>
     </div>
 </nav>

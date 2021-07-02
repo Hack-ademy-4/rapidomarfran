@@ -10,6 +10,12 @@
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
             <p class="small mt-5 tx-muted">{{__('ui.slogan')}}</p>
+            <div class=" d-flex align-item"> 
+                <form action="{{ route('search') }}" method="GET" class="mb-5 mt-5">
+                    <input class="b-search border border-warning" type="text" name="q" placeholder="" >
+                    <button class="btn btn-sm btn-outline-none title buttonOverlay m-3" type="submit">Buscar</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -58,7 +64,7 @@
             @foreach($announcements as $announcement)
             <div class="col-12 col-md-4 d-flex justify-content-center">
 
-                <div class="card shadow text-center cardLayout my-5" style=" width: 18rem;">
+                <div class="card shadow text-center cardLayout my-5" style=" width: 30rem;">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($announcement->images as $image)
@@ -80,13 +86,13 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled mb-2">
-                                    <li class="mb-2 title">{{__('ui.title')}}:</li><p class="text-dark">{{$announcement->title}}</p>
-                                    <li class="mb-2 title ">{{__('ui.price')}}:</li><p class="text-dark">{{$announcement->price}}$</p>
-                                    <li class="mb-2 title">{{__('ui.description')}}:</li><p class="text-dark">{{$announcement->body}}</p>
-                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li><p class="text-dark">{{$announcement->user->name}}</p>
-                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li><p class="text-dark">{{$announcement->created_at->format('d/m/Y')}}</p>
+                                    <li class="mb-2 title">{{__('ui.title')}}:</li><p class="text-dark fw-bold">{{$announcement->title}}</p>
+                                    <li class="mb-2 title ">{{__('ui.price')}}:</li><p class="text-dark fw-bold">{{$announcement->price}}€</p>
+                                    <li class="mb-2 title">{{__('ui.description')}}:</li><p class="text-dark fw-bold">{{$announcement->body}}</p>
+                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li><p class="text-dark fw-bold">{{$announcement->user->name}}</p>
+                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li><p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
                                     <li class="mb-2 title">{{__('ui.category')}}:</li>
-                                </ul>
+                        </ul>
                             <a class="text-decoration-none"
                                 href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}} 
                             </a>

@@ -13109,6 +13109,10 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.b-search {
+  border-radius: 50px;
+}
+
 .cardLayout {
   border: none;
   outline: none;
