@@ -22,7 +22,7 @@
 
 <body>
     <div id="app">
-        @include('layouts._nav')
+        @include('layouts.__nav')
         
         @if(session('access.denied.revisor.only'))
         <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
