@@ -1,7 +1,6 @@
 <?php
 
-use Laravel\Scout\ScoutServiceProvider;
-use TeamTNT\Scout\TNTSearchScoutServiceProvider;
+
 
 return [
 

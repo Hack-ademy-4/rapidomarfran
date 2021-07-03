@@ -10,12 +10,11 @@
         <div class="col-12 col-md-4">
             <h1 class="display-3 fw-bolder title">{{__('ui.welcome')}}</h1>
             <p class="small mt-5 tx-muted">{{__('ui.slogan')}}</p>
-            <div class=" d-flex align-item">
-
+            <div class=" container d-flex align-item">
                 <div class="row align-items-center headline">
                     <h5 class=" title mt-5 pt-5">{{__('ui.search')}}</h5>
                     <form action="{{ route('search') }}" method="GET">
-                        <input class="b-search border border-warning" type="text" name="q" placeholder="">
+                        <input class="b-search border border-warning text-center" type="text" name="q" placeholder="">
                         <button class="btn btn-sm btn-outline-none title buttonOverlay m-3 headline"
                             type="submit">Buscar</button>
                     </form>
@@ -41,9 +40,9 @@
         </div>
     </div>
 </div> -->
-<div class="container">
+<div class="container headline my-5 py-5">
     <div class="row justify-content-around text-center">
-        <h2 class="title my-5 py-5">Porque elejir Rapido</h2>
+        <h2 class="title mb-5 ">Porque elejir Rapido</h2>
         <div class="col-12 col-md-3 text-center mb-3">
 
             <div>
@@ -65,6 +64,15 @@
         </div>
         <div class="col-12 col-md-3 text-center mb-3">
             <div>
+                <lord-icon src="https://cdn.lordicon.com//qhviklyi.json" trigger="loop"
+                    colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
+                </lord-icon>
+                <h4 class="tx-sec">Diferente forma de pago</h4>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-3 text-center mb-3">
+            <div>
                 <lord-icon src="https://cdn.lordicon.com//zpxybbhl.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
@@ -73,8 +81,8 @@
         </div>
     </div>
 </div>
-<div class="container mt-5 pt-5 headline">
-    <div class="row align-items-center">
+<div class="container  headline mt-5 pt-5">
+    <div class="row align-items-center ">
         <div class="col-12 col-md-6">
             <h2 class="tx-sec">{{__('ui.textSearch')}} 🤩</h2>
             <p class="mt-3 fw-bold">{{__('ui.products')}}</p>
@@ -94,7 +102,7 @@
                     @endforeach
 
                 </div>
-                <div class="swiper-pagination"></div>
+                <!--  <div class="swiper-pagination"></div> -->
             </div>
         </div>
     </div>
