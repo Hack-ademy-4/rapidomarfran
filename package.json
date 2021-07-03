@@ -13,7 +13,7 @@
         "axios": "^0.21",
         "dropzone": "^5.9.2",
         "flag-icon-css": "^3.5.0",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.25",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "resolve-url-loader": "^4.0.0",
