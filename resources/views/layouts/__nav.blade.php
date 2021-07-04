@@ -23,7 +23,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 w-100 aling-items-baseline justify-content-evenly">
+            <ul class="navbar-nav mb-2 mb-lg-0 w-100 align-items-center justify-content-evenly">
 
                 <li class="nav-item mr-2">
                     <!-- nuevo annuncio -->
@@ -142,14 +142,11 @@
                 </form>
                 <a class="text-decoration-none tx-w" id="logoutBtn" class="" href="#">{{__('ui.logout')}}</a>
             </div>
-
-            <!-- revisor -->
+            <-- revisor -->
 <!--             @if (Auth::user()->is_revisor)
             <span class="btn btn-info mx-3">
                 <a class="mx-3 text-decoration-none tx-w" href="{{ route('revisor.home') }}">{{__('ui.revisor')}}
-
                     {{\App\Models\Announcement::ToBeRevisionedCount() }}
-
                 </a>
             </span>
             -->
