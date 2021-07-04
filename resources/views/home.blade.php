@@ -49,7 +49,7 @@
                 <lord-icon src="https://cdn.lordicon.com//dnoiydox.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Encontras todo lo que quiera comprar</h4>
+                <h4 class="tx-sec">Encuentra todo tipo de productos nuevos y de segunda mano.</h4>
             </div>
         </div>
 
@@ -58,7 +58,7 @@
                 <lord-icon src="https://cdn.lordicon.com//gqzfzudq.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Echo da españoles y traducido en diferentes idiomas</h4>
+                <h4 class="tx-sec">Creada en diferentes idiomas, para facilitarte la busqueda en tu idioma favorito.</h4>
             </div>
 
         </div>
@@ -67,7 +67,7 @@
                 <lord-icon src="https://cdn.lordicon.com//qhviklyi.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Diferente forma de pago</h4>
+                <h4 class="tx-sec">Elige la forma de pago que más se adapte a tus necesidades.</h4>
             </div>
 
         </div>
@@ -76,7 +76,7 @@
                 <lord-icon src="https://cdn.lordicon.com//zpxybbhl.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Mujeres y hombres hablan sobre nosotros</h4>
+                <h4 class="tx-sec">Somos la plataforma lider del mercadeo intenternacina.</h4>
             </div>
         </div>
     </div>

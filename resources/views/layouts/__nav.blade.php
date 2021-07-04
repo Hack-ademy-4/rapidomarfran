@@ -23,8 +23,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 w-100">
-                
+            <ul class="navbar-nav mb-2 mb-lg-0 w-100 aling-items-baseline justify-content-evenly">
+
                 <li class="nav-item mr-2">
                     <!-- nuevo annuncio -->
                     <a class="nav-link text-decoration-none tx-sec"
@@ -37,8 +37,8 @@
                     <ul class="dropdown-menu border-0 b-nav" aria-labelledby="navbarDropdown">
                         @foreach($categories as $category)
 
-                        <li class="title">
-                            <a class="dropdown-item text-center mb-3"
+                        <li class="tx-main">
+                            <a class="dropdown-item text-center mb-3 tx-main"
                                 href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
                                 <!--  {{$category->name}} -->
                                 {{__("ui.{$category->name}")}}
@@ -55,25 +55,25 @@
                     <ul class="dropdown-menu border-0 b-nav" aria-labelledby="navbarDropdown">
 
 
-                        <li class="dropdown-item d-flex align-items-center">
+                        <li class="dropdown-item d-flex align-items-center tx-main">
 
                             @include('layouts._locale',["lang"=>'es','nation'=>'es'])
                             <span>Español</span>
 
                         </li>
-                        <li class="dropdown-item d-flex align-items-center">
+                        <li class="dropdown-item d-flex align-items-center tx-main">
 
                             @include('layouts._locale',["lang"=>'en','nation'=>'gb'])
                             <span>Ingles</span>
                         </li>
-                        <li class="dropdown-item d-flex align-items-center">
+                        <li class="dropdown-item d-flex align-items-center tx-main">
 
                             @include('layouts._locale',["lang"=>'it','nation'=>'it'])
                             <span>Italiano</span>
                         </li>
                     </ul>
                 </li>
-                
+
                 @guest
                 <li class="nav-item text-decoration-none list-unstyled dropdown mr-2">
                     <!-- idiomas -->
@@ -95,16 +95,56 @@
                 </li>
             </ul>
             @else
+            <!-- parte nueva revisor -->
+            <li class="nav-item text-decoration-none list-unstyled dropdown mr-2">
+                <a class="nav-link text-decoration-none tx-sec dropdown-toggle" href="#" id="navbarDropdown"
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false">Revisar anuncios</a>
+                <ul class="dropdown-menu border-0 b-nav" aria-labelledby="navbarDropdown">
+                    <li class="dropdown-item d-flex align-items-center">
+                        <a class="mx-3 text-decoration-none tx-main"
+                            href="{{ route('revisor.home') }}">{{__('ui.revisor')}}
+
+                            {{\App\Models\Announcement::ToBeRevisionedCount() }}
+
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            @if (Route::has('login'))
+            <!--  <li class="nav-item d-flex align-items-center mr-2"> -->
+           
             <div class="btn btn-warning">
+                <form id="logoutForm" action="{{route('logout')}}" method="POST">
+                    @csrf
+                </form>
+                <a class="text-decoration-none tx-main btn btn-warning" id="logoutBtn" class=""
+                    href="#">{{__('ui.logout')}}</a>
+                @if (Auth::user()->is_revisor)
+            </div>
+           
+            <!--  </li> -->
+
+            @endif
+            @if (Route::has('register'))
+            @endif
+            @endguest
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- botones de revisor -->
+<!--   <div class="btn btn-warning">
                 <form id="logoutForm" action="{{route('logout')}}" method="POST">
                     @csrf
                 </form>
                 <a class="text-decoration-none tx-w" id="logoutBtn" class="" href="#">{{__('ui.logout')}}</a>
             </div>
+
             <!-- revisor -->
-            @if (Auth::user()->is_revisor)
-
-
+<!--             @if (Auth::user()->is_revisor)
             <span class="btn btn-info mx-3">
                 <a class="mx-3 text-decoration-none tx-w" href="{{ route('revisor.home') }}">{{__('ui.revisor')}}
 
@@ -112,11 +152,10 @@
 
                 </a>
             </span>
+            -->
 
-
-            @endif
+<!--             @endif
             @endguest
         </div>
     </div>
-</nav>
-
+</nav> -->
