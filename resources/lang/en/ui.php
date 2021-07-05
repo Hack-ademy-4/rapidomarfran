@@ -11,7 +11,7 @@ return [
     'register'=>'Register',
     'revisor'=>'Review ad',
     'slogan'=>' Welcome to the best website for second-hand stuff',
-    'textSearch'=>'¿What are you looking for?',
+    'textSearch'=>'¿What is your favourite category?',
     'products'=>'The lastest ads',
     'contact'=>'Contact',
     'info'=>'Business info',
@@ -29,6 +29,15 @@ return [
     'nameSeller'=>'Seller name',
     'dateAd'=>'Date at',
     'search'=>'What are you looking for?¿',
+    'user'=>'Come in¡',
+    'searchBtn'=>'Search',
+    'why'=>'Why you should choose Rapido?',
+    'iconOne'=>'Buy and sell quality new and second-hand products.',
+    'iconTwo'=>'Buy and sell in the language that makes you feel most comfortable. ',
+    'iconThree'=>'Safe pay and no asshole.',
+    'iconFour'=>'Thousands of positive feedbacks.',
+    'foundOut'=>'Found out more on lastest daily ads.',
+
 
     
     

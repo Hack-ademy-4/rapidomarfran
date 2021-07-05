@@ -31,8 +31,13 @@ return [
     'nameSeller'=>'Vendedor',
     'dateAd'=>'Data',
     'search'=>'Qué estas buscando?¿',
-    
-    
-    
+    'user'=>'Entrar',
+    'searchBtn'=>'Buscar',
+    'why'=>'¿Porque elegir Rapido?',
+    'iconOne'=>'Compra-venta de productos nuevos y de segunda mano.',
+    'iconTwo'=>'Realiza busquedas en tu idioma nativo.  ',
+    'iconThree'=>'Utiliza las formas de pago más seguras del mercado.',
+    'iconFour'=>'Miles de personas nos recomiendan.',
+    'foundOut'=>'Descubre mas sobre los ultimos anuncios.',
 
 ];

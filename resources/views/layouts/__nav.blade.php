@@ -77,17 +77,17 @@
                 @guest
                 <li class="nav-item text-decoration-none list-unstyled dropdown mr-2">
                     <!-- idiomas -->
-                    <a class="nav-link text-decoration-none tx-sec dropdown-toggle" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+                    <a class="nav-link text-decoration-none title dropdown-toggle" href="#" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.user')}}</a>
                     <ul class="dropdown-menu border-0 b-nav" aria-labelledby="navbarDropdown">
                         @if (Route::has('login'))
                         <li class="dropdown-item d-flex align-items-center">
-                            <a class="text-decoration-none tx-main" href="{{route('login')}}">{{__('ui.login')}}</a>
+                            <a class="text-decoration-none title" href="{{route('login')}}">{{__('ui.login')}}</a>
                         </li>
                         @endif
                         @if (Route::has('register'))
                         <li class="dropdown-item d-flex align-items-center">
-                            <a class="text-decoration-none tx-main"
+                            <a class="text-decoration-none title"
                                 href="{{route('register')}}">{{__('ui.register')}}</a>
                         </li>
                         @endif
@@ -96,6 +96,7 @@
             </ul>
             @else
             <!-- parte nueva revisor -->
+            @if (Auth::user()->is_revisor)
             <li class="nav-item text-decoration-none list-unstyled dropdown mr-2">
                 <a class="nav-link text-decoration-none tx-sec dropdown-toggle" href="#" id="navbarDropdown"
                     role="button" data-bs-toggle="dropdown" aria-expanded="false">Revisar anuncios</a>
@@ -111,48 +112,19 @@
 
                 </ul>
             </li>
+            @endif
             @if (Route::has('login'))
-            <!--  <li class="nav-item d-flex align-items-center mr-2"> -->
-           
+            
             <div class="btn btn-warning">
                 <form id="logoutForm" action="{{route('logout')}}" method="POST">
                     @csrf
                 </form>
                 <a class="text-decoration-none tx-main btn btn-warning" id="logoutBtn" class=""
                     href="#">{{__('ui.logout')}}</a>
-                @if (Auth::user()->is_revisor)
-            </div>
-           
-            <!--  </li> -->
-
-            @endif
-            @if (Route::has('register'))
+               
             @endif
             @endguest
+            </div>
         </div>
     </div>
 </nav>
-
-
-
-<!-- botones de revisor -->
-<!--   <div class="btn btn-warning">
-                <form id="logoutForm" action="{{route('logout')}}" method="POST">
-                    @csrf
-                </form>
-                <a class="text-decoration-none tx-w" id="logoutBtn" class="" href="#">{{__('ui.logout')}}</a>
-            </div>
-            <-- revisor -->
-<!--             @if (Auth::user()->is_revisor)
-            <span class="btn btn-info mx-3">
-                <a class="mx-3 text-decoration-none tx-w" href="{{ route('revisor.home') }}">{{__('ui.revisor')}}
-                    {{\App\Models\Announcement::ToBeRevisionedCount() }}
-                </a>
-            </span>
-            -->
-
-<!--             @endif
-            @endguest
-        </div>
-    </div>
-</nav> -->

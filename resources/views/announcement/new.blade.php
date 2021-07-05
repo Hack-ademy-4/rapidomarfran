@@ -11,7 +11,7 @@
             <div class="col-12 col-md-6">
                 <div class="card shadow border-0 p-3">
                     <div class="card-body">
-                        <h4 class="tx-sec">Para Agregar compila el formulario 👇🏻</h4>
+                        <h4 class="tx-sec">Para agregar rellena el formulario 👇🏻</h4>
                         <form method="POST" action='{{route("announcement.create")}}'>
                             @csrf
 
@@ -36,7 +36,7 @@
 
 
                             <div class="mb-3">
-                                <label for="announcementImages" class="form-label title  ">Imagenes</label>
+                                <label for="announcementImages" class="form-label title">Imagenes</label>
                                 <div class="dropzone" id="drophere"></div>
                                 @error('images')
                                 <small class="alert alert-danger">{{ $message }}</small>
