@@ -40,15 +40,15 @@
                 </div>
                 <div class="card-footer text-capitalize ">
                 <ul class="list-unstyled mb-2">
-                                    <li class="mb-2 title">{{__('ui.title')}}:</li>
+                                    <li class="mb-2 tx-main">{{__('ui.title')}}:</li>
                                     <p class="text-dark fw-bold">{{$announcement->title}}</p>
-                                    <li class="mb-2 title ">{{__('ui.price')}}:</li>
+                                    <li class="mb-2 tx-main ">{{__('ui.price')}}:</li>
                                     <p class="text-dark fw-bold">{{$announcement->price}}€</p>
-                                    <li class="mb-2 title">{{__('ui.description')}}:</li>
+                                    <li class="mb-2 tx-main">{{__('ui.description')}}:</li>
                                     <p class="text-dark fw-bold">{{$announcement->body}}</p>
-                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li>
+                                    <li class="mb-2 tx-main">{{__('ui.nameSeller')}}:</li>
                                     <p class="text-dark fw-bold">{{$announcement->user->name}}</p>
-                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li>
+                                    <li class="mb-2 tx-main">{{__('ui.dateAd')}}:</li>
                                     <p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
                 </ul>
                     <!-- <p>{{$announcement->body}}</p>
