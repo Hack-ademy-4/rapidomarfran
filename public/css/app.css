@@ -3832,14 +3832,9 @@ textarea.form-control-lg {
   list-style: none;
 }
 
-@media (max-width: 991.98px) {
-  .nav-link {
-    align-items: baseline;
-    margin: 1.2rem 0;
-  }
-}
 .nav-link {
   display: block;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }

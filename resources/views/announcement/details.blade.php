@@ -11,10 +11,10 @@
 </div>
 <div class="container my-3 py-3">
     <div class="row h-100 align-items-center justify-content-center mx-5">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 ">
 
-            <div class="row mb-2">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <!-- <div class="row mb-2"> -->
+                <div id="carouselExampleControls" class="carousel slide d-md-block" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @foreach ($announcement->images as $image)
                         <div class="carousel-item @if($loop->first)active @endif">
@@ -33,7 +33,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
         <div class="col-12 col-md-6">
             <h2 class="tx-main">Descripción del producto.</h2>
