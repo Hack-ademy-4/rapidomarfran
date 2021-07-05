@@ -2,7 +2,7 @@
 @section('content')
 
 
-<!-- bienvenido -->
+
 
 
 <div class="container  head headline mt-5 pt-5">
@@ -102,7 +102,7 @@
                     @endforeach
 
                 </div>
-                <!--  <div class="swiper-pagination"></div> -->
+               
             </div>
         </div>
     </div>
@@ -136,13 +136,7 @@
                         </button>
                     </div>
                     <div class="card-body">
-                        <!-- <ul class="list-unstyled mb-2">
-                                    <li class="mb-2 title">{{__('ui.title')}}:</li><p class="text-dark fw-bold">{{$announcement->title}}</p>
-                                    <li class="mb-2 title ">{{__('ui.price')}}:</li><p class="text-dark fw-bold">{{$announcement->price}}€</p>
-                                    <li class="mb-2 title">{{__('ui.description')}}:</li><p class="text-dark fw-bold">{{$announcement->body}}</p>
-                                    <li class="mb-2 title">{{__('ui.nameSeller')}}:</li><p class="text-dark fw-bold">{{$announcement->user->name}}</p>
-                                    <li class="mb-2 title">{{__('ui.dateAd')}}:</li><p class="text-dark fw-bold">{{$announcement->created_at->format('d/m/Y')}}</p>
-                        </ul> -->
+                       
                         <div class="card-title title fw-bold">{{__('ui.title')}}:</div>
                         <span>{{$announcement->title}}</span>
                         <div class="card-subtitle title fw-bold">{{__('ui.price')}}:</div>
