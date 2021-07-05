@@ -16,7 +16,7 @@
                     <form action="{{ route('search') }}" method="GET">
                         <input class="b-search border border-warning text-center" type="text" name="q" placeholder="">
                         <button class="btn btn-sm btn-outline-none title buttonOverlay m-3 headline"
-                            type="submit">Buscar</button>
+                            type="submit">{{__('ui.searchBtn')}}</button>
                     </form>
                 </div>
             </div>
@@ -42,14 +42,14 @@
 </div> -->
 <div class="container headline my-5 py-5">
     <div class="row justify-content-around text-center">
-        <h2 class="title mb-5 ">Porque elejir Rapido</h2>
+        <h2 class="title mb-5 ">{{__('ui.why')}}</h2>
         <div class="col-12 col-md-3 text-center mb-3">
 
             <div>
                 <lord-icon src="https://cdn.lordicon.com//dnoiydox.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Compra-venta de productos nuevos y de segunda mano.</h4>
+                <h4 class="tx-sec">{{__('ui.iconOne')}}</h4>
             </div>
         </div>
 
@@ -58,7 +58,7 @@
                 <lord-icon src="https://cdn.lordicon.com//gqzfzudq.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Realiza busquedas en tu idioma nativo.</h4>
+                <h4 class="tx-sec">{{__('ui.iconTwo')}}</h4>
             </div>
 
         </div>
@@ -67,7 +67,7 @@
                 <lord-icon src="https://cdn.lordicon.com//qhviklyi.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Utiliza las formas de pago más seguras del mercado.</h4>
+                <h4 class="tx-sec">{{__('ui.iconThree')}}</h4>
             </div>
 
         </div>
@@ -76,7 +76,7 @@
                 <lord-icon src="https://cdn.lordicon.com//zpxybbhl.json" trigger="loop"
                     colors="primary:#4f1091,secondary:#eee966" style="width:80px;height:80px">
                 </lord-icon>
-                <h4 class="tx-sec">Miles de personas nos recomiendan.</h4>
+                <h4 class="tx-sec">{{__('ui.iconFour')}}</h4>
             </div>
         </div>
     </div>
@@ -110,7 +110,7 @@
     <div class="container ">
         <div class="row my-5 py-5">
             <div class="col-12 text-center">
-                <h2 class="tx-main mt-5 pt-5">Descubre mas sobre los ultimos anuncios</h2>
+                <h2 class="tx-main mt-5 pt-5">{{__('ui.foundOut')}}</h2>
             </div>
             @foreach($announcements as $announcement)
             <div class="col-12 col-md-3 d-flex justify-content-center">

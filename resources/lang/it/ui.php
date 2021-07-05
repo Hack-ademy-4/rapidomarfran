@@ -11,7 +11,7 @@ return [
     'register'=>'Registrati',
     'revisor'=>'Anunnci da revisionare',
     'slogan'=>'Benvenuti a la miglior piattaforma per i prodotti di seconda mano',
-    'textSearch'=>'¿Che cosa stai cercando?',
+    'textSearch'=>'¿Che categoria stai cercando?',
     'products'=>'Gli ultimi annunci della giornata',
     'contact'=>'Contatti',
     'info'=>'Informazioni azienda',
@@ -31,4 +31,14 @@ return [
     'nameSeller'=>'Venduto da',
     'dateAd'=>'Pubblicato il',
     'search'=>'Cerca quello che vuoi?¿',
+    'user'=>'Accedi',
+    'searchBtn'=>'Cerca',
+    'why'=>'Perche scegliere Rapido?',
+    'iconOne'=>'Compra e venti prodotti di qualita nuovi e di seconda mano',
+    'iconTwo'=>'Cerca quello che vuoi nella tua lingua',
+    'iconThree'=>'Utilizza la forma di pago piu sicura del mercato',
+    'iconFour'=>'Chiunque raccomanda Rapido',
+    'foundOut'=>'Scopri di piu sopra gli ultimi annunci del giorno.',
+
+
 ];
